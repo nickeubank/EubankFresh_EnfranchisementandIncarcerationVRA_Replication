@@ -1,0 +1,77 @@
+Contents:       Stata procedures for multiple imputation analysis.
+Files:          miest.ado
+                miest.hlp
+                misum.ado
+                misum.hlp
+Version:        2.1
+Date:           April 29, 2003
+Author:         Kenneth Scheve
+                Department of Political Science
+                Yale University
+                kenneth.scheve@yale.edu
+
+DESCRIPTION
+
+"miest" combines the results of statistical analyses across multiply imputed
+datasets and reports the resulting multiple imputation estimates. "misum"
+implements the same procedures but for calculating multiple imputation
+estimates of the mean.
+
+Multiple imputation is a method of statistical inference for incomplete
+multivariate data. The method involves imputing m values for each
+missing cell in your data matrix and creating m "completed" datasets.
+Across these completed datasets, the observed values are the same, but the
+missing values are filled in with different imputations that reflect 
+uncertainty about the missing data. There are a number of alternative methods
+for producing the imputations. One that is particularly simple to use is
+Amelia: A Program for Missing Data by James Honaker, Anne Joseph, Gary King,
+Kenneth Scheve, and Naunihal Singh. It is freely available as a standalone
+windows program and as a Gauss program at http://GKing.Harvard.edu/.  After
+creating the multiply imputed datasets, you then apply whatever statistical
+method you would have used if there had been no missing values to each of
+the m data sets, and use a simple procedure, implemented by "miest", to combine
+the results. The multiple imputation point estimate for the parameters of
+the statistical model is simply the average of the estimates across the m
+analyses. The variance of this point estimate is the average of the estimated
+variances from within each completed dataset, plus the sample variance in
+the point estimates across the datasets (multiplied by a factor that corrects
+for bias because the number of imputed datasets m is less than infinity). For
+more information about multiple imputation, see "Analyzing Incomplete
+Political Science Data: An Alternative Algorithm for Multiple Imputation"
+American Political Science Review Vol. 95 No. 1 (March 2001):49-69
+by Gary King, James Honaker, Anne Joseph and Kenneth Scheve.
+
+Once you have installed the procedures, consult the on-line Stata help
+files for a description of the command syntax for "miest" and "misum".
+
+INSTALLATION
+
+Copy miest.ado, miest.hlp, misum.ado, and misum.hlp to your personal ado
+directory.  To get the name of this directory, type
+
+    adopath
+
+at the Stata command prompt.  You should see a message that looks like this:
+
+   . adopath
+     [1] (UPDATES)  "C:\STATA\ADO\UPDATES/"
+     [2] (BASE)     "C:\STATA\ADO\BASE/"
+     [3] (SITE)     "C:\STATA\ADO\SITE/"
+     [4]            "."
+     [5] (PERSONAL) "C:\ADO\PERSONAL/"
+     [6] (STBPLUS)  "C:\ADO\STBPLUS/"
+     [7] (OLDPLACE) "C:\ADO/"
+
+The fifth directory is your personal ado directory; in this
+example, it is C:\ADO\PERSONAL.  If this directory does not exist on your
+computer, you will need to create the directory from a DOS prompt or by
+using Windows Explorer.
+
+ADDITIONAL INFORMATION
+
+If you find a bug or have a comment about the procedure, please send mail to
+the author at kenneth.scheve@yale.edu. Updates of this zip file will be
+posted at http://GKing.Harvard.Edu.
+
+Thanks to Nick Cox, James Honaker, Anne Joseph, Gary King, and Michael Tomz
+for very helpful comments and suggestions.

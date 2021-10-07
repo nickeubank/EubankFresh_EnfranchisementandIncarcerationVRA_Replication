@@ -1,0 +1,60 @@
+File Manifest for ICPSR 3504
+
+Blumenthal, Monica D., Robert L. Kahn, and Frank M. Andrews. JUSTIFYING
+VIOLENCE: ATTITUDES OF AMERICAN MEN, 1969. Conducted by University of
+Michigan, Survey Research Center. 2nd ICPSR ed. Ann Arbor, MI: Inter-
+university Consortium for Political and Social Research [producer and
+distributor], 1978. http://doi.org/10.3886/ICPSR03504.v2
+
+Details on the version history can be found below the file listings.
+
+
+Study-level Documentation
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    03504-descriptioncitation.pdf       -       -         -       2017-04-03  -
+
+    03504-related_literature.txt        -       -         -       daily       -
+
+    03504-manifest.txt                  -       -         -       daily       -
+
+
+DS0001 Justifying Violence:  Attitudes of American Men, 1969
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    03504-0001-Codebook.pdf             -       -         -       2002-08-02  35695a874b6451899b23fa3baa5bc298
+
+    03504-0001-Codebook.txt             -       -         -       2000-12-01  38facfc4e29c1f4ab6a4150d72d529af
+
+    03504-0001-Data.dta                 -       1,374     342     2005-03-10  a0256adc8f349e371ceefdadb12f041a
+
+    03504-0001-Data.por                 -       1,374     341     2005-03-10  558c5ba14f21d50f771888a3b5e207cc
+
+    03504-0001-Data.txt                 454     1,374     341     1996-06-05  b2e83e1a86f6426c8a29f32a4cf8bdee
+
+    03504-0001-Data.xpt                 -       1,374     341     2005-03-10  b43db0169d3c1f7a72705810d026cb58
+
+    03504-0001-Setup.dct                -       -         -       2005-03-10  50b77bf35c66a36a71ffd1922fe4e261
+
+    03504-0001-Setup.do                 -       -         -       2005-03-10  38e1ee33401174f0d5c18efdd205682f
+
+    03504-0001-Setup.sas                -       -         -       2003-02-07  4f2c855a574587fabf534692057e731e
+
+    03504-0001-Setup.sps                -       -         -       2000-12-01  42c145b2fe2b57b2bd99fa16aedc1bc1
+
+    03504-0001-Supplemental_syntax.do   -       -         -       2005-03-10  652f9b7455e5a86e9501eb2f616252c6
+
+    03504-0001-Supplemental_syntax.sas  -       -         -       2005-03-10  471404e1e402e416d24aad28bd212fff
+
+
+Version History
+
+2005-11-04  On 2005-03-14 new files were added to one  or  more datasets.
+These files included additional setup files as well  as one or more of the
+following: SAS  program, SAS transport, SPSS portable,   and Stata system
+files. The  metadata record was revised  2005-11-04 to  reflect these
+additions.

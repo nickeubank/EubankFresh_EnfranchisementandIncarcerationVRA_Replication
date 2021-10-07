@@ -1,0 +1,58 @@
+.-
+help for ^misum^
+.-
+
+Calculates multiple imputation mean estimates
+-------------------------------------------------
+
+^misum^ dataset varlist [weight] [^if^ exp] [^in^ range][^, nsets(^m^)^ ^iout^ ]
+
+
+Options 
+-------
+
+^dataset^ Stub name of the multiple imputed datasets. For example, you
+may have 5 imputed datasets named mydata1, mydata2, mydata3, mydata4,
+and mydata5. In this case set ^dataset^ to mydata.
+
+^m^ Number of multiple imputed datasets. Default is equal to 5.
+
+^iout^ Prints out summary statistics for all m imputed datasets.
+
+Description
+-----------
+
+^misum^ combines the results of descriptive statistics across multiply
+imputed datasets and reports the resulting multiple imputation estimate
+of the mean and the standard error of this estimate.
+
+Please report any comments or bugs directly to the author at the email
+address below.
+
+
+Examples
+--------
+
+Suppose you have created 5 multiply imputed datasets and named them mydata1,
+mdata2, ect. You want to calculate multiple imputation mean estimate
+for the variables income and gender.
+
+     . ^misum mydata income gender^
+
+You can show descriptive statistics for each imputed dataset.
+
+     . ^misum mydata income gender, iout^
+
+Or change the number of datasets used.
+
+     . ^misum mydata income gender, nsets(10)^
+
+
+Author
+------
+
+     Kenneth Scheve
+     Yale University
+     kenneth.scheve@@yale.edu
+
+

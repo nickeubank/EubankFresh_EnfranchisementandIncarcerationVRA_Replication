@@ -1,0 +1,130 @@
+.-
+help for ^miest^
+.-
+
+Calculates multiple imputation estimates 
+----------------------------------------
+
+^miest^ dataset command varlist [weight] [^if^ exp] [^in^ range] [^, nsets(^m^)^ ^iout^ ... ]
+
+
+Options 
+-------
+
+^dataset^ Stub name of the multiple imputed datasets. For example, you
+may have 5 imputed datasets named mydata1, mydata2, mydata3, mydata4,
+and mydata5. In this case set ^dataset^ to mydata.
+
+^command^ Stata command. ^miest^ supports the following Stata commands:
+^regress^, ^logit^, ^probit^, ^ologit^, ^oprobit^, ^mlogit^,
+^clogit^, ^tobit^, ^poisson^, ^nbreg^, ^hetprob^, ^heckman^,
+^heckprob^, ^xtreg^, ^xtregar^, ^xtlogit^, ^xtprobit^, ^xtpois^,
+^xtnbreg^, ^xttobit^, ^xtgee^, ^xtgls^, ^xtclog^, ^xtpcse^.
+
+^m^ Number of multiple imputed datasets. Default is equal to 5.
+
+^iout^ Prints out intermediate output of the m analyses for m imputed
+datasets.
+
+Outputs
+-------
+
+In addition to the output printed to the screen, ^miest^ saves the multiple
+imputation parameter estimates in the vector _mib and the corresponding
+variance-covariance matrix in _miVCE.
+
+Note that ^miest^ always reports the multiple imputation parameter estimates. 
+If you use an command option requesting an odds ratio or some other 
+transformation of the parameter estimate ^miest^ will still report the 
+untransformed multiple imputation parameter estimate.
+
+Note that for some applications of ^xt^ models such as ^xtregar^ and ^xtpcse^, 
+Stata calculates a or a number of autocorrelation coefficients. ^miest^ does 
+not provide multiple imputation estimates for these coefficients. If these 
+coefficients are required, they can be calculated by using the ^iout^ option 
+and taking the average across the ^m^ analyses for each imputed dataset.
+
+Description
+-----------
+
+^miest^ combines the results of statistical analyses across multiply imputed
+datasets and reports the resulting multiple imputation estimates.
+
+Multiple imputation is a method of statistical inference for incomplete
+multivariate data. The method involves imputing m values for each
+missing cell in your data matrix and creating m "completed" datasets.
+Across these completed datasets, the observed values are the same, but the
+missing values are filled in with different imputations that reflect 
+uncertainty about the missing data. There are a number of alternative methods
+for producing the imputations. One that is particularly simple to use is
+Amelia: A Program for Missing Data by James Honaker, Anne Joseph, Gary King,
+Kenneth Scheve, and Naunihal Singh. It is freely available as a standalone
+windows program and as a Gauss program at http://GKing.Harvard.edu/.  After
+creating the multiply imputed datasets, you then apply whatever statistical
+method you would have used if there had been no missing values to each of
+the m data sets, and use a simple procedure, implemented by "miest", to combine
+the results. The multiple imputation point estimate for the parameters of
+the statistical model is simply the average of the estimates across the m
+analyses. The variance of this point estimate is the average of the estimated
+variances from within each completed dataset, plus the sample variance in
+the point estimates across the datasets (multiplied by a factor that corrects
+for bias because the number of imputed datasets m is less than infinity). For
+more information about multiple imputation, see "Analyzing Incomplete
+Political Science Data: An Alternative Algorithm for Multiple Imputation"
+American Political Science Review Vol. 95 No. 1 (March 2001):49-69
+by Gary King, James Honaker, Anne Joseph and Kenneth Scheve.
+
+Please report any comments or bugs directly to the author at the email
+address below.
+
+
+Examples
+--------
+
+Suppose you have created 5 multiply imputed datasets and named them mydata1,
+mdata2, ect. You want to regress income on education using multiple
+imputation. 
+
+     . ^miest mydata regress income education^
+
+You can add options to the stata command just as you would normally.
+
+     . ^miest mydata regress income education, robust^
+
+Or change the number of datasets used.
+
+     . ^miest mydata regress income education, robust nsets(10)^
+
+Or change the statistical model used.
+
+     . ^miest mydata logit turnout income education, nsets(10)^
+
+Or show the intermediate results.
+
+     . ^miest mydata logit turnout income education, nsets(10) iout^
+
+
+
+Author
+------
+
+     Kenneth Scheve
+     Yale University
+     kenneth.scheve@@yale.edu
+
+
+References
+----------
+
+Gary King, James Honaker, Anne Joseph, and Kenneth Scheve. 2001. ``Analyzing
+     Incomplete Political Science Data: An Alternative Algorithm for
+     Multiple Imputation.'' American Political Science Review
+     Vol. 95 No. 1 (March):49-69.
+
+James Honaker, Anne Joseph, Gary King, and Kenneth Scheve (1999). Amelia: A
+     Program for Missing Data (Gauss Version), Cambridge, MA: Harvard
+     University, http://GKing.Harvard.edu/.
+
+James Honaker, Anne Joseph, Gary King, Kenneth Scheve, and Naunihal Singh
+     (1999). Amelia: A Program for Missing Data (Windows Version) Cambridge,
+     MA: Harvard University, http://GKing.Harvard.edu/.

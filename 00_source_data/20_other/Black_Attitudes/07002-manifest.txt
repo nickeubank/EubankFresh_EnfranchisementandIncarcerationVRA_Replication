@@ -1,0 +1,45 @@
+File Manifest for ICPSR 7002
+
+Marx, Gary T. Negro Political Attitudes, 1964. ICPSR07002-v1. Ann Arbor,
+MI: Inter-university Consortium for Political and Social Research
+[distributor], 2007-12-19. http://doi.org/10.3886/ICPSR07002.v1
+
+Details on the version history can be found below the file listings.
+
+
+Study-level Documentation
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    07002-descriptioncitation.pdf       -       -         -       2014-07-03  -
+
+    07002-related_literature.txt        -       -         -       daily       -
+
+    07002-manifest.txt                  -       -         -       daily       -
+
+
+DS0001 Negro Political Attitudes, 1964
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    07002-0001-Codebook-card_image.pdf  -       -         -       2002-04-23  bd6cd2035746b7336f50d9e5b8d36695
+
+    07002-0001-Data-card_image.txt      80      1,119     367     1995-06-29  22e48655499adcde88d2f92fbd0414ed
+
+    07002-0001-Setup.dct                -       -         -       2007-12-19  9be191a72b0737037c19d653ea21bce0
+
+    07002-0001-Setup.do                 -       -         -       2007-12-19  f26c34382976b7d8c2fd210fe3ebc94c
+
+    07002-0001-Setup.sas                -       -         -       2007-12-19  313be3adeae86570a5d7e684e9f7ecf0
+
+    07002-0001-Setup.sps                -       -         -       2007-12-19  469ee45e22a61213d397a4f1b3024787
+
+    07002-0001-Supplemental_syntax.sas  -       -         -       2007-12-19  dd7fe4e0ff1cb6898d9a0f06c26117f9
+
+
+Version History
+
+2007-12-19  SAS, SPSS, and Stata setup files have  been added to this data
+collection.

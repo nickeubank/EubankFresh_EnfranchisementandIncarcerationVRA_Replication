@@ -1,0 +1,13 @@
+infile dictionary {
+    _column(1)    numeric                               YEAR   %20f  "Gss year for this respondent                       "
+   _column(21)    numeric                           POLATTAK   %20f  "Citizen attacking policeman with fists"
+   _column(41)    numeric                           POLMURDR   %20f  "Citizen questioned as murder suspect"
+   _column(61)    numeric                           POLABUSE   %20f  "Citizen said vulgar or obscene things"
+   _column(81)    numeric                           POLHITOK   %20f  "Ever approve of police striking citizen"
+  _column(101)    numeric                             COURTS   %20f  "Courts dealing with criminals"
+  _column(121)    numeric                           NATCRIME   %20f  "Halting rising crime rate"
+  _column(141)    numeric                             REGION   %20f  "Region of interview"
+  _column(161)    numeric                               RACE   %20f  "Race of respondent"
+  _column(181)    numeric                                ID_   %20f  "Respondent id number"
+  _column(201)    numeric                             BALLOT   %20f  "Ballot used for interview"
+}

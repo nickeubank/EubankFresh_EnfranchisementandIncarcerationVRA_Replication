@@ -1,0 +1,71 @@
+File Manifest for ICPSR 8475
+
+American National Election Studies, and Stanford University. ANES Time
+Series Cumulative Data File (1948-2012). ICPSR08475-v15. Ann Arbor, MI:
+Inter-university Consortium for Political and Social Research
+[distributor], 2015-10-23. http://doi.org/10.3886/ICPSR08475.v15
+
+Details on the version history can be found below the file listings.
+
+
+Study-level Documentation
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    08475-descriptioncitation.pdf       -       -         -       2015-10-23  -
+
+    08475-related_literature.txt        -       -         -       daily       -
+
+    08475-manifest.txt                  -       -         -       daily       -
+
+
+DS0001 ANES Time Series Cumulative Data File (1948-2012)
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    08475-0001-Codebook.pdf             -       -         -       2015-10-23  d763f0f77e4266355047c48942306802
+
+    08475-0001-Data.dta                 -       55,674    953     2015-10-23  233845e508ac1bc1c9aac00c9d62775b
+
+    08475-0001-Data.rda                 -       55,674    953     2015-10-23  86c6d2556fb874bb2f67baa4a1845687
+
+    08475-0001-Data.sav                 -       55,674    953     2015-10-23  86d6e9306a5fb40a3d26591f6a47bbcf
+
+    08475-0001-Data.stc                 -       55,674    953     2015-10-23  16566df01959fe9f04a773b7b509bf47
+
+    08475-0001-Data.tsv                 -       55,674    953     2015-10-23  5007b94e94b440ff8a184a492873fc0a
+
+    08475-0001-Data.txt                 1674    55,674    953     2015-10-23  c3ddc5fc88eeb4827874c66411385dee
+
+    08475-0001-Setup.dct                -       -         -       2015-10-23  ccb9e6622e7f98d348704d8b5c3b754b
+
+    08475-0001-Setup.do                 -       -         -       2015-10-23  0f44c1709f983b3347080e70a728d955
+
+    08475-0001-Setup.sas                -       -         -       2015-10-23  b244dd078855800ff993a3b6994ba44d
+
+    08475-0001-Setup.sps                -       -         -       2015-10-23  65f8bbd868c3c4ed6c1fb5c1d58a28ee
+
+    08475-0001-Supplemental_syntax.do   -       -         -       2015-10-23  ebac8863a6512978d12289ff153a4e5b
+
+    08475-0001-Supplemental_syntax.sas  -       -         -       2015-10-23  9182a26b3d5f55bba863721af8035c02
+
+
+Version History
+
+2015-10-23 Data for 2012 have been added, and is available in ASCII with
+SAS, SPSS, and Stata data definition statements, as well as available in
+SAS transport, SPSS, R, and Stata data file formats.  2011-12-05 Data for
+2008 have been added, and the data are available in ASCII with SAS, SPSS,
+and Stata data definition statements, SAS transport, SPSS portable, and
+Stata data file formats.  The codebook is now available as a PDF file.
+2007-09-25 Data for 2004 have been added. The number of variables has
+increased from 750 to 950. The codebook is now available as a Portable
+Document Format (PDF) file.  2004-12-08 Data for 2002 have been added, and
+the data are available in ASCII with SAS, SPSS, and Stata data definition
+statements, SAS transport, SPSS portable, and Stata data file formats. The
+codebook is now available as a PDF file.  2002-05-31 Data for 2000 have
+been added, and the data are available in ASCII, SAS transport, and SPSS
+portable file formats. The number of variables has increased from 635 to
+752. The codebook is now available as a PDF file.
