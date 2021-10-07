@@ -356,9 +356,9 @@ Table~\ref{table_state} presents formal estimates the effect of Section 5 covera
 
 Similarly, Columns 2 and 5 present the estimates from our two-way fixed effects model. This estimate is similar but smaller than the estimate of the difference-in-difference in 1980 from columns 1 and 4---this is to be expected as we know from both the plots above and the estimates in Columns 1 and 4 that prison admissions did not immediately change after 1965 but rather began trending up.  Therefore, an average over this entire period will under-estimate the difference we see after the carceral state has fully responded to passage of Section 5.  This can be seen in our ``long-difference'' specification in columns 3 and 6, which include the same two-way fixed effects as Columns 2 and 5, but exclude the initial period of transition (1965-1975)---as expected, these estimates are larger than those that take into account the entire period, and are in line with the results from Columns 1 and 4 evaluated at 1980.
 
-These estimates constitute substantially large effects. For context, the average Black incarceration rate per 100,000 people in our sample of states was \input{../../50_results/states_mean_black.tex}\unskip~with a within-state standard deviation of \input{../../50_results/states_std_black.tex}\unskip. Thus, this effect size of +56 per 100,000 people constitutes more than a one standard deviation increase in incarceration rates, an effect about equal to an increase of more than one third of the average incarceration rate.
+These estimates constitute substantially large effects. For context, the average Black incarceration rate per 100,000 people in our sample of states was \input{../../50_results/states_mean_black.tex}\unskip~with a within-state standard deviation of \input{../../50_results/states_std_black.tex}\unskip. Thus, this effect size of +57 per 100,000 people constitutes more than a one standard deviation increase in incarceration rates, an effect about equal to an increase of more than one third of the average incarceration rate.
 
-The magnitude of Black minus White incarceration rates is similar---the average Black minus White incarceration rate in our sample was \input{../../50_results/states_mean_bminusw.tex}\unskip~per 100,000 with a within-state standard deviation of \input{../../50_results/states_std_bminusw.tex}\unskip, making the estimated effect size of +48 per 100,000 more than a one standard deviation increase, and more than a 1/2 standard deviation increase over the cross-state average.
+The magnitude of Black minus White incarceration rates is similar---the average Black minus White incarceration rate in our sample was \input{../../50_results/states_mean_bminusw.tex}\unskip~per 100,000 with a within-state standard deviation of \input{../../50_results/states_std_bminusw.tex}\unskip, making the estimated effect size of +49 per 100,000 more than a one standard deviation increase, and more than a 1/2 standard deviation increase over the cross-state average.
 
 
 
@@ -691,7 +691,7 @@ Table~\ref{table_coverage} describes the jurisdictions covered by the 1965 VRA a
     % \includegraphics[ width=3.9in, clip=true, trim=0.1in 0in 0.6in 0in  ]{../../20_intermediate_data/legend1.png}
  	\label{figure_states1}
  	\end{center}
-   {\scriptsize{\emph{Notes:} Plots present the number of new Black prison admits as a percentage of the statewide Black population.  States in the South covered by Section 5 of the 1965-VRA have their trends presented in dashed grey. The y-axis scales are different for each plot.}}
+   {\scriptsize{\emph{Notes:} Plots present the number of new Black prison admits as a percentage of the statewide Black population and local polynomial regression fits.  States in the South covered by Section 5 of the 1965-VRA have their trends presented in dashed grey. The y-axis scales are different for each plot.}}
  \end{figure} \normalsize
 
 
@@ -700,7 +700,7 @@ Table~\ref{table_coverage} describes the jurisdictions covered by the 1965 VRA a
 % %-------------------------------------------
  \begin{figure}[h!]
  	\begin{center}
- 	\caption{Trends in Black prison admissions rates by state (continued)}
+ 	\caption{Trends in Black prison admissions rates by state (with imputations, continued)}
  	\small
 
  		\vspace{.2in}
@@ -711,7 +711,7 @@ Table~\ref{table_coverage} describes the jurisdictions covered by the 1965 VRA a
  	\label{figure_states2}
     % \includegraphics[ width=3.9in, clip=true, trim=0.1in 0in 0.6in 0in  ]{../../20_intermediate_data/legend1.png}
  	\end{center}
-   {\scriptsize{\emph{Notes:} Plots present the number of new Black prison admits as a percentage of the statewide Black population.  States in the South covered by Section 5 of the 1965-VRA have their trends presented in dashed grey.  The y-axis scales are different for each plot.}}
+   {\scriptsize{\emph{Notes:} Plots present the number of new Black prison admits as a percentage of the statewide Black population and local polynomial regression fits.  States in the South covered by Section 5 of the 1965-VRA have their trends presented in dashed grey.  The y-axis scales are different for each plot.}}
  \end{figure} \normalsize
 
 
@@ -774,7 +774,7 @@ Table~\ref{table_coverage} describes the jurisdictions covered by the 1965 VRA a
        %\includegraphics[ width=3.9in, clip=true, trim=0.1in 0in 0.6in 0in  ]{../../20_intermediate_data/legend1.png} \\
  	\label{figure_difference_states1}
  	\end{center}
-   {\singlespacing \scriptsize{\emph{Notes:} Plots present the difference between the rate of new Black prison admissions and new White prison admissions (Black line).  The rate of new Black prison admission is presented in dashed gray, while the rate of new White prison admissions is presented in dotted gray.  Note that the y-axis scales are different for each plot.}}
+   {\singlespacing \scriptsize{\emph{Notes:} Plots present local polynomial fits for difference between the rate of new Black prison admissions and new White prison admissions (Black line).  The rate of new Black prison admission is presented in dashed gray, while the rate of new White prison admissions is presented in dotted gray. Note that the y-axis scales are different for each plot.}}
 \end{figure} \normalsize
 
 
@@ -787,7 +787,7 @@ Table~\ref{table_coverage} describes the jurisdictions covered by the 1965 VRA a
  %-------------------------------------------
  \begin{figure}[h!]
  	\begin{center}
- 	\caption{Trends in difference between Black and White prison admissions rates by state (continued)}
+ 	\caption{Trends in difference between Black and White prison admissions rates by state (with imputations, continued)}
  	\small
 
  		\vspace{.2in}
@@ -813,7 +813,7 @@ Table~\ref{table_coverage} describes the jurisdictions covered by the 1965 VRA a
  \renewcommand{\thefigure}{E\arabic{figure}}
  \normalsize
 
- Imputation of missing incarceration data at the state level is accomplished through a multi-step process. Following \citesec{Honaker:2010wb}, we first estimate a local polynomial regression for each state to model the relationship between incarceration rates and time. Second, those predicted values are then fed into \emph{Amelia II} \citepsec{Honaker:2011ct} along with state and year fixed effects to model the missing incarceration data. Finally, \emph{Amelia II} generates a set of 5 datasets, each will missing values filled using values drawn from the modeled posterior distribution of missing values. Regressions are then run on each of these five datasets, and the parameters estimated from those regressions are then recombined to account for variation in parameter estimates caused by the estimation uncertainty of missing data imputations.
+ Imputation of missing incarceration data at the state level is accomplished through a multi-step process. Following \citesec{Honaker:2010wb}, we first estimate a local polynomial regression for each state to model the relationship between incarceration rates and time. Second, those predicted values are then fed into \emph{Amelia II} \citepsec{Honaker:2011ct} along with state and year fixed effects to model the missing incarceration data. Finally, \emph{Amelia II} generates a set of 5 datasets, each with missing values filled using values drawn from the modeled posterior distribution of missing values. Regressions are then run on each of these five datasets, and the parameters estimated from those regressions are then recombined to account for variation in parameter estimates caused by the estimation uncertainty of missing data imputations.
 
  Tables~\ref{figure_interpolation_0} and~\ref{figure_interpolation_1} show the source of each observation from the balanced panel dataset used for estimation of Table~\ref{table_state}.
 
@@ -1220,7 +1220,7 @@ In the case of the \cite{Violence1969} data, we define class using both income a
  \begin{center}
  \caption{Difference between Black and White attitudes towards the carceral state, 1969}
  \small
-		 \includegraphics[ width=5.9in, clip=true, trim=0.35in 0in 0.0in 0in ]{../../50_results/Attitudes_1.pdf}
+		 \includegraphics[ width=5.9in, clip=true, trim=0.35in 0in 0.0in 0in ]{../../50_results/Attitudes_violence1969_1.pdf}
  \label{figure_attitudes_class}
  	\end{center}
  	{\scriptsize{\emph{Source:} \cite{Violence1969}. }} \\
@@ -1257,7 +1257,7 @@ Although the evidence for upper class Black respondents having more punitive att
  \begin{center}
  \caption{Difference between Black upper income and White attitudes towards the carceral state, 1969}
  \small
-		 \includegraphics[ width=5.9in, clip=true, trim=0.35in 0in 0.0in 0in ]{../../50_results/Attitudes_4.pdf}
+		 \includegraphics[ width=5.9in, clip=true, trim=0.35in 0in 0.0in 0in ]{../../50_results/Attitudes_violence1969_4.pdf}
  \label{figure_attitudes_class2}
  	\end{center}
  	{\scriptsize{\emph{Source:} \cite{Violence1969}. }} \\
@@ -1281,7 +1281,7 @@ Given this evidence, it is difficult to infer that, at the time of the VRA's pas
  \label{figure_dope}
  	\end{center}
  	{\scriptsize{\emph{Source:} Gallup poll from 1969 from the Roper Center for Public Opinion Research. }} \\
-	{\scriptsize{\emph{Notes:} The above presents difference in means estimated via OLS between Black and White respondents.  Estimates to the right of the dashed line indicate crimes for which, on average, Black respondents preferred longer sentence to White respondents.  \singlespacing }}
+	{\scriptsize{\emph{Notes:} The above presents difference in means estimated via OLS between Black and White respondents.  Estimates to the right of the dashed line indicate crimes for which, on average, Black respondents referred longer sentence to White respondents.  \singlespacing }}
 \end{figure} \normalsize
 
 
@@ -1479,10 +1479,10 @@ We also consider data from \citesec{ANES:2020ut}.  This data lacks the detail of
    		\small \vspace*{.05in}
    		\smallskip
 			(a) Averages by race \\
-   			\includegraphics[width=4.2in,  clip=true,  trim= 0.0in 0.0in 0.0in 0.0in]{../../50_results/Attitudes_2.pdf} \\
+   			\includegraphics[width=4.2in,  clip=true,  trim= 0.0in 0.0in 0.0in 0.0in]{../../50_results/Attitudes_violence1969_2.pdf} \\
 				\smallskip \smallskip
 				(b) Differences in means between Black and White respondents \\
-   			\includegraphics[width=4.2in,  clip=true,  trim= 0.0in 0.0in 0.0in 0.0in]{../../50_results/Attitudes_3.pdf}\\
+   			\includegraphics[width=4.2in,  clip=true,  trim= 0.0in 0.0in 0.0in 0.0in]{../../50_results/Attitudes_violence1969_3.pdf}\\
    		\label{figure_anes}
    		\end{center}
   	\scriptsize{\emph{Notes:} The above plots the average responses by race (top) and simple difference in means between those races (bottom) for the police feeling thermometer question from the ANES.}
@@ -1639,7 +1639,7 @@ As expected, there is no evidence of a ``Section 5'' effect prior to 1965. Consi
 \renewcommand{\thefigure}{N\arabic{figure}}
 \normalsize
 
-Table~\ref{table_mip} below presents the minimum number of observations that must be removed from the dataset to change different properties of the long-difference difference-in-difference coefficient (N=504). As the table shows, selectively removing a small number of the most influential observations can push the estimate to being below statistical significance, but the table shows one would need to remove at least 94 (of 504) observations in order to flip the sign of the coefficient of interest, and no amount of data removal could generate a negative statistically significant coefficient.
+Table~\ref{table_mip} below presents the minimum number of observations that must be removed from the dataset to change different properties of the long-difference difference-in-difference coefficient (N=504). As the table shows, selectively removing a small number of the most influential observations can push the estimate to being below statistical significance, but the table shows one would need to remove at least 130 (of 504) observations in order to flip the sign of the coefficient of interest, and no amount of data removal could generate a negative statistically significant coefficient.
 
 Note that due to limitations of the \cite{broderick2021} software, these estimates are based on a single draw from our multiple imputation datasets, and thus do not quite accurately account for interpolation uncertainty (though because the dataset is not best-guess interpolations, but rather one of the multiple imputation draws, interpolation uncertainty is being accounted for partially).
 

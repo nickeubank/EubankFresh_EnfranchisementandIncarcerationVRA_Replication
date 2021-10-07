@@ -116,7 +116,8 @@ foreach state of local states {
 	* globals
 	*--------
 
-	global outcome 		= "st_icpsr_MI_rate_black"
+	global outcome 		= "st_lpoly4mi_rate_black"
+	global scatter_outcome = "st_icpsr_rate_black"
 	global filename 	= "plot_`state'"
 	global condition	= "year >= 1935 & year <= 1985 & county == "" "
 
@@ -152,7 +153,7 @@ foreach state of local states {
 		(line $outcome year			if state_abbr == "`state'" & $conditon
 			, lcolor($color) lpattern($pattern) lwidth(thick)
 			)
-		(scatter $outcome year		if state_abbr == "`state'" & $conditon & st_icpsr_rate_black != .
+		(scatter $scatter_outcome year		if state_abbr == "`state'" & $conditon & st_icpsr_rate_black != .
 				, mcolor($color) msymbol($symbol) msize(medlarge)
 					xline(1965, lcolor(gs12) lwidth(thick) )
 			)
@@ -220,16 +221,20 @@ foreach state of local states {
 levelsof state_abbr, local(states)
 sort state year
 
+gen st_lpoly4mi_rate_bminusw = st_lpoly4mi_rate_black - st_lpoly4mi_rate_white
 foreach state of local states {
 
 	* globals
 	*--------
 
-	global outcome1 		= "st_icpsr_MI_rate_bminusw"
-	global outcome2 		= "st_icpsr_MI_rate_black"
-	global outcome3 		= "st_icpsr_MI_rate_white"
+	global outcome1 		= "st_lpoly4mi_rate_bminusw"
+	global outcome2 		= "st_lpoly4mi_rate_black"
+	global outcome3 		= "st_lpoly4mi_rate_white"
 
-	global condition		= "st_icpsr_MI_rate_black"
+	global scatter_outcome		= "st_icpsr_rate_black"
+
+	
+	global condition		= "st_icpsr_rate_black"
 
 	global filename 		= "plot_state_diff_`state'"
 
@@ -262,12 +267,6 @@ foreach state of local states {
 			, lcolor(gs9) lwidth(thick) lpattern(shortdash)
 			)
 
-
-			// scatter
-			//---------
-		(scatter $outcome1 year			if year > 1935 & year <= 1985 & state_abbr == "`state'" & ${condition} != .
-			, mcolor(black) msize(large) msymbol(circle)
-			)
 
 			,
 

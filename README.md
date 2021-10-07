@@ -21,6 +21,10 @@ Also note that if there are problems with those R files, Stata won't stop the ex
 
 Replication can be re-re-run (not a typo) by deleting everything in 50_results, and all FILES in `20_intermediate_data/40_analysis_datasets` and `20_intermediate_data/50_saved_estimates` (note you have to keep the folders, as the code will try and put things into those folders).
 
+## A Note On Random Seeds
+
+We have set random seeds for the multiple imputations. HOWEVER: I have, in all my years doing replications, never been able to get random seeds in R to be really stable across operating systems, installations, etc. So... odds are you'll get results that differ slightly from those in our paper. Sorry. Suggestions on creating more stable random seeds in R welcome!
+
 ## File Names
 
 If you're wondering about the numeric prefixes to files and folders, they are ordinal but not cardinal -- new files are initially created at intervals of ten (e.g. 10_firstfile.do, 20_secondfile.do, etc.) so one can easily later add files between existing files (e.g. 15_oh_need_another_here.do), preserving the ordinal information about how files should be run without requiring all files be renamed.

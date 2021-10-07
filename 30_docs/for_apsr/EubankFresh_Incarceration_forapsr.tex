@@ -1,0 +1,495 @@
+
+
+\documentclass[12pt]{article}
+
+
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{authblk}
+\usepackage{multirow}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{subfloat}
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{verbatim, rotating, paralist}
+\usepackage{enumerate}
+\usepackage{natbib}
+\usepackage{multibib}
+\usepackage{pdfsync}
+\usepackage{latexsym}
+\usepackage{amsthm}
+
+
+\usepackage{stmaryrd}
+\usepackage{dsfont}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{mathtools}
+
+\usepackage{parskip}
+\usepackage{anysize, indentfirst, setspace}
+\usepackage[right=2.1cm, left=2.1cm, top=2.25cm, bottom=2.25cm]{geometry}
+\usepackage{tikz}
+\usepackage{epigraph}
+\usepackage{csquotes}
+\usepackage{appendix}
+\usepackage{enumitem}
+\usepackage{rotating}
+\usepackage{changepage}
+
+
+\renewcommand{\topfraction}{.85}
+\renewcommand{\bottomfraction}{.7}
+\renewcommand{\textfraction}{.15}
+\renewcommand{\floatpagefraction}{.66}
+\renewcommand{\dbltopfraction}{.66}
+\renewcommand{\dblfloatpagefraction}{.66}
+
+\usetikzlibrary{arrows,shapes,backgrounds,positioning,patterns,decorations.pathreplacing}
+\newenvironment{shift}{\begin{adjustwidth}{1cm}{}}{\end{adjustwidth}}
+\setlist{nosep}
+\newcites{sec}{Appendix References}
+
+
+
+
+
+
+
+
+
+%-----------------------------------BEGIN DOCUMENT--------------------------------%
+\begin{document}
+
+\onehalfspacing
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{.125in}
+
+
+\title{Enfranchisement and Incarceration \\ After the 1965 Voting Rights Act\footnote{\footnotesize The authors thank Ran Abramitzky, Joshua Clinton, Florian Hollenbach, Amy Lerman, Trevon Logan, Chris Muller, Jan Pierskalla, Jonathan Rodden, Paul Sniderman, Ariel White, Steven White, Gavin Wright, two groups at Duke University and three anonymous reviewers for comments and feedback on this project.  This research was supported in part by the Alma Ostrom and Leah Hopkins Awan Civic Education Fund as part of the 2018 APSA Centennial Grant program.  Invaluable research assistance was provided by: Aaron Ainsworth, Nicholas Ainsworth, Isaac Gabella, Morgan (Grey) Hollowell, Hannah Rogers, and Michaela (Calee) White. }}
+
+\author{\vspace*{.2in} \hspace*{.1in} Nick Eubank\footnote{\footnotesize Assistant Research Professor, Social Science Research Institute; nick$@$nickeubank.com. } \hspace*{.6in}   Adriane Fresh\footnote{\footnotesize Assistant Professor, Department Political Science; adriane.fresh$@$duke.edu. } \\ \vspace*{-.12in} \hspace*{.1in} Duke University  \hspace*{.45in}  Duke University  }
+
+\date{July 12, 2021 }
+
+
+\maketitle
+
+
+
+
+%---------------------------------------ABSTRACT----------------------------------%
+
+\begin{abstract}
+\bigskip \onehalfspacing
+\noindent The 1965 Voting Rights Act (VRA) fundamentally changed the distribution of electoral power in the US South.  We examine the consequences of this mass enfranchisement of Black people for the use of the carceral state---police, the courts, and the prison system.  We study the extent to which White communities in the US South responded to the end of Jim Crow by increasing the incarceration of Black people. We test this with new historical data on state and county prison intake data by race ($\sim$1940-1985) in a series of difference-in-differences designs. We find that states covered by Section 5 of the VRA experienced a differential increase in Black prison admissions relative to those that were not covered, and that incarceration varied systematically in proportion to the electoral threat posed by Black voters.  Our findings indicate the potentially perverse consequences of enfranchisement when establishment power seeks---and finds---other outlets of social and political control.
+\end{abstract}
+
+\newpage \clearpage
+
+
+
+
+%-----------------------------INTRODUCTION---------------------------------%
+
+\singlespacing
+\vspace{.2in}
+\epigraph{``The seeds of [a] new system of control---mass incarceration---were planted during the Civil Rights Movement$\ldots$ when it became clear that the old caste system was crumbling and a new one would have to take its place.''}	{\footnotesize \textit{The New Jim Crow}  (2001)\\ \scriptsize MICHELLE ALEXANDER}
+
+\vspace{.2in}
+
+\onehalfspacing
+
+
+
+
+
+%-----------------------------------INTRODUCTION--------------------------------------%
+
+The mass transportation of African people for slave labor has cast a long shadow over American history.  That shadow has made elusive the quest for all Americans, regardless of race, to find equal opportunity before the law, and the freedom to exercise voice in the political process.  Via emancipation and Reconstruction, Black people took a hard-fought step towards equal integration into American democracy.  But that ``moment in the sun'' was made brief, as Du Bois observed, by a now well-documented turn on the part of White people to the coercive apparatus of the state to fortify a threatened racial hierarchy  \citep{DuBois:1998vn,Lichtenstein:1996ug,Oshinsky:1997up,Blackmon:2009wo,Muhammad:2011wf,LeFlouria:2015vj}.  The 13th Amendment to the Constitution perhaps most clearly exemplifies this intimate link between race, slavery and incarceration in the exception it granted in outlawing slavery for ``punishment for crime.''
+
+Like Reconstruction, the Civil Rights movement of the 1950s and 60s is often seen as a key moment in the quest for political equality, securing new federal legal protections for Black civil and voting rights that successfully rolled back decades of Jim Crow segregation and voter suppression.  Chief among these federal policies was the Voting Rights Act (VRA) of 1965, which abolished literacy tests and grandfather clauses, and---via Section 5---required that subject-jurisdictions pre-clear changes to their voting practices with the Department of Justice.  The VRA is consistently argued to have ushered in a new era of Black voter participation, descriptive political representation, and government responsiveness to minorities \citep{Davidson:1994ue,BullockIII:2009uu,Washington:2014tk,Fresh:2018td,Bernini:2017tv,Aneja:2019uz}.
+
+But despite enormous political progress for minorities, acts such as the VRA were no miracle corrective, and minority voting rights have remained a site of fierce contention more than a half-century on. The ability of Black people to vote in the mid-century represented a profound political and social threat to the institutionalized system of racial domination of Jim Crow that was fiercely maintained by the Southern White elite \citep{KeyJr:1950ta,Valelly:2004uh,Mickey:2015vh}.  Following the passage of the VRA, this elite sought alternate means of enforcing racial hierarchy and protecting their political power---redrawing constituency boundaries, eliminating elected offices, and shifting electoral institutions to their advantage \citep{McDonald:2003tz,Rosenberg:2008wz,Keyssar:2009tl,Komisarchik:2018wu}.   Many of these strategies, however, were fundamentally electoral, and ultimately failed to obtain pre-clearance under the VRA, rendering them unusable.
+
+Despite the attention paid to electoral levers, they are hardly the only tools that incumbents can use to maintain their power, nor the only responses that can reify a failing social order.  In this paper, we study the extent to which institutions of the \emph{carceral state}---police, the courts, and the prison system---were transformed in response to Black enfranchisement by the VRA.\footnote{We define the carceral state as the set of formal institutions---police, courts, prisons, and so on---that comprise the state's domestic coercive apparatus as it relates to crime \citep{Foucault:1977va}.  As we study incarceration as our outcome of interest, we focus on the \emph{carceral} state as opposed to simply ``the state'' or law enforcement.}  \cite{Alexander:2012tj} most prominently articulates the argument that these institutions effectively replaced previous practices and policies of social control and disenfranchisement, explicitly terming the mass incarceration of Black people that grew from the mid-20th century onwards the \emph{New Jim Crow}.\footnote{As we note later, this type of argument has been explored in parts by a number of scholars including \cite{Weaver:2007vr}, \cite{Hinton:2016tb}, \cite{Murakawa:2014vj}, and \cite{Gottschalk:2006ub}, among still others. See \cite{Beckett:2020cw} for a recent review.  Our intention in using this phrase is to link our theorizing to existing studies, as well as to link post-Jim Crow strategies to their historical antecedents.  Despite the continuity, it's important to note that there were unique features of the post-Civil Rights carceral state too \citep{Lerman:2014wr}. }
+
+In this paper, we develop and extend the \emph{New Jim Crow} argument to explicitly link Black enfranchisement to the use of the carceral state via two primary mechanisms.  The first mechanism argues that the breakdown in the Jim Crow racial hierarchy---that is, a social order supported through voter suppression---may have activated racial resentment on the part of Whites throughout carceral institutions, as well as on the part of the White electorate.  This resulted in individual-level race-specific decisions, and broader racially-motivated policy, that aggregated to different rates of incarceration. According to the second argument, Black enfranchisement generated a direct \emph{political} threat to White political elites in the South after the VRA, potentially leading them to use carceral institutions to \emph{instrumentally} disenfranchise minority voters to preserve their own political power. While race-based \emph{mass} incarceration was arguably achieved towards the end of the 20th century, both of these mechanisms could potentially explain the roots of these racial inequities.
+
+This argument stands in direct contrast to arguments about the VRA---and enfranchisement, more generally---that predict a far more straightforward translation of increased electoral strength from the newly-enfranchised group into policy outcomes more closely aligned with that group's preferences (e.g., \cite{Downs:1957vg}).\footnote{Or, more precisely, the preferences of the politically-relevant sub-group of the newly-enfranchised population.}  Therefore, we also explore whether Black enfranchisement may have impacted the use of the carceral state from the demand-side; that is, we explore the possibility that newly-enfranchised Black voters' policy demands drove changes in the carceral state. In particular, we explore two forms of what we term the \emph{Self-Policing} argument: that Black people may have (1) used their political power to reduce the carceral burden on their communities, or alternatively, (2) they may have supported efforts to \emph{increase} the carceral presence in their own communities---e.g., via more policing and harsher sentences---to protect the nascent gains of the Civil Rights Movement from a rising tide of crime.  While contemporary repression of Black people by law enforcement would seem to suggest that the former relationship is more likely, we emphasize that prominent scholars have argued the latter has occurred in some cases \citep{Fortner:2015uz,FormanJr:2017tz,Clegg:2018uq}.
+
+
+
+
+%  FIGURE 1: Incarceration Trends at the National Level
+%----------------------------------------------------
+\begin{figure}[t!]
+	\begin{center}
+	\caption{National trends in the incarceration rate by jurisdiction of government custody}
+		\small \vspace*{.05in}
+		\smallskip
+				\includegraphics[ width=6.8in,  clip=true,  trim= 0.0in 0.0in 0.0in 0.0in ]{_f1_national_trends_rate.pdf}
+		\label{figure_national_trends}
+		\end{center}
+    \scriptsize{\emph{Source:} \cite{Stateprisonslocal:2016ua} } \\
+	\scriptsize{\emph{Notes:} The plot presents trends in the incarceration rate---prisoners held in each federal custody, state custody, and local custody as a percentage of the relevant population. This data source does not include racial breakdowns. }
+\end{figure} \normalsize
+
+To evaluate these possibilities, we first systematically investigate how race-based incarceration at the state-level changed in response to Black enfranchisement that resulted from the 1965 VRA.  Our state-level focus differentiates us from the vast majority of existing work in this domain that focuses on the national carceral state.  As Figure~\ref{figure_national_trends} demonstrates, the contribution of states to total U.S. incarceration heavily dominates that of localities and the federal government.  Moreover, sub-national governments are the primary political entities in control of carceral institutions, and thus most likely to be responsive to enfranchisement.\footnote{The U.S. Constitution enumerates only limited criminal justice powers to the federal government.  As of the 1990s, some 90\% of crimes in the U.S. are prosecuted at the state and local level \citep{Sampson:1997wg}.}
+
+One reason that the literature has traditionally focused on federal incarceration is a lack of sub-national incarceration data by race. To overcome that limitation, we gather archival statistical reports and prison intake rosters to compile a new dataset on admissions to state prisons by race in the decades before and after the 1965 VRA ($\sim$1940-1985). We use this data in a series of difference-in-differences designs leveraging variation in state and local coverage by Section 5 of the VRA.  Section 5 represented the revolutionary enforcement mechanism of the VRA, requiring \emph{covered} jurisdictions to pre-clear changes to their voting rules and practices to curb further attempts at minority disenfranchisement.  While the VRA applied everywhere, only some jurisdictions were subject to Section 5, effectively being ``treated'' with greater intensity.\footnote{See Appendix B.}  We find that in states subject to Section 5, Black prison admissions rates (as well as the difference between Black and White admissions rates) increased \emph{more} after 1965 relative to those that remained uncovered.
+
+These findings are consistent both with our articulation of the \emph{New Jim Crow} argument and a version of the \emph{Self-Policing} argument in which Blacks preferred more punitive carceral policies and were empowered to obtain them once enfranchised.  To adjudicate between these explanations, we draw on public opinion data from the period, and examine a sub-sample of our states for which we collect further-disaggregated data on county-specific admissions to state-level prison.  To our knowledge, this is the only data of its type available for this period.  We examine how both the electoral power of Black voters (alternatively conceptualized as the threat to White elites) and the descriptive representation of Blacks in elected office condition our main effects.
+
+We find that while our main effects are increasing in the Black electorate, crucially, they decline in relative terms for majority-Black counties where Black voters are most likely to obtain their preferred policies.  Moreover, when we consider the presence of Black elected officials we find that, if anything, their presence \emph{reduced} differential Black incarceration.  Finally, in examining Black punitive attitudes from contemporaneous surveys, we find little evidence that Blacks differentially preferred more punitive carceral policies that they could have better-pursued after 1965. Given these findings, we conclude that our results are likely the result the \emph{New Jim Crow} dynamic---that Black incarceration rose because of a White reaction to enfranchisement, not the political system responding to Black demands for it.
+
+In offering new empirical insights into the initial factors that contributed to late 20th century mass incarceration in the US, we contribute to a large and growing literature on the causes and origins of this phenomenon, particularly in terms of race \citep{Gottschalk:2006ub,Alexander:2012tj,Murakawa:2014vj,Hinton:2016tb,Pfaff:2017tp,Gottschalk:2008um,Soss:2017wx,Beckett:2020cw}.  Where this literature is generally qualitative and historical, our work departs by bringing new quantitative evidence to bear in a set of research designs that better account for counterfactual conditions.  Rather than explaining the full development of race-based mass incarceration, our findings isolate the contribution of one root cause of particular political importance.
+
+We build on work that has examined the role of punitive public opinion, partisan politics and Black threat in determining law enforcement and criminal justice outcomes (e.g., \cite{Jacobs:1996wi} \cite{Fording:2001vz}, \cite{Yates:2005th}, \cite{Enns:2015vz}). Our findings in support of the \emph{New Jim Crow} argument are consistent with much of the work in this domain that demonstrates a positive relationship between racial threat and social control. We further contribute a test of how perceptions of threat can be activated via key political junctures like enfranchisement. At first glance, our results appear inconsistent with more recent work that finds that Black arrest rates declined in response to the VRA \citep{Facchini:2020tb}.  Yet, the apparent difference is largely a function of emphasis.  As the authors explain, their findings are driven by rural elected Sheriffs in counties with predominantly Black populations. We find similar heterogeneity---we also find that predominantly Black counties have smaller increases in incarceration than other counties.  However, our state-level analyses give much smaller weight to these rural counties, instead emphasizing the large-scale state-level effects of the VRA that come from the population-weighted average across counties.
+
+Finally, our project contributes to the literature on minority enfranchisement in American political development and the effectiveness of 1960s civil and voting rights legislation \citep{Kousser:1974ty,Grofman:1994vf,Davidson:1994ue}.  This literature has largely overlooked extra-electoral repression as a strategy of disenfranchisement \emph{after} 1965; something our project theorizes and tests for explicitly.  Our results offer a qualification---though hardly a rebuke---to the largely positive view of the effects of the VRA, demonstrating that the breakdown in a politically-enforced system of racial domination can have significant second-order political consequences.
+
+
+
+
+
+
+
+
+
+%-------------------------------- FRAMEWORK ---------------------------------%
+\section*{The Carceral Response to the VRA}
+
+In this section, we develop and extend two arguments linking Black enfranchisement following the VRA to Black incarceration.\footnote{We emphasize that these theories are best understood as being situated in a much larger historical context of race, the franchise, and incarceration in the United States.  In the interest of space, we provide this additional context in Appendix A.}  The first is what we refer to as the \emph{New Jim Crow} argument, based primarily on \cite{Weaver:2007vr} and \cite{Alexander:2012tj}.  The second is the \emph{Self-Policing} argument of Black political efficacy following from enfranchisement.
+
+
+
+% Subsection
+%-----------
+\subsection*{The \emph{New Jim Crow} Argument}
+
+The \emph{New Jim Crow} argument, as we articulate and extend it, contends that Black enfranchisement was considered a fundamental threat to the encompassing White-dominated political order in the US South.  In addition, the VRA, in general, and Section 5 even more specifically, restricted the ability of the existing White political elite to use Jim Crow policies to disenfranchise minority voters as part of the broad project of maintaining racial hierarchy. Given this, we propose two classes of explanations for how this VRA-generated threat may have lead to increases in subsequent Black incarceration---what we term (1) the \emph{diffuse reactive} mechanism, and (2) the \emph{instrumental political} mechanism.  We think there is theoretical precedent for each of these mechanisms, but we note that results consistent with the \emph{New Jim Crow}, broadly, may reflect only one or the other mechanism working in isolation, not necessarily both.  We further note reasons to think the \emph{diffuse reactive} mechanism is more likely to hold, and return to evaluating the mechanisms at the end of the paper.
+
+
+
+% Subsection
+%-----------
+\vspace{.12in}
+\textbf{The \emph{Diffuse Reactive} Mechanism.} \text{  } The \emph{diffuse reactive} mechanism argues that a shift in the incarceration of Black people as a result of the VRA resulted from diffuse reactive responses to the breakdown of the Jim Crow system and the \emph{status threat} of newly-enfranchised Blacks. This diffuse reaction may have then resulted in increased incarceration in two ways. First, it may have impacted incarceration directly by shaping how discretion was exercised by individuals working in the criminal justice system. Second, it may have resulted in changes in public opinion among White voters that were then harnessed, politicized, and turned into policy by entrepreneurial politicians.
+
+To understand the logic of the \emph{diffuse reactive} mechanism, it is essential to understand what Jim Crow was, what it did, and how the VRA changed that.  Jim Crow was a broad project to maintain a racial hierarchy in which Whites were dominant and Blacks and other minorities were subordinate.\footnote{As \cite{Blumer:1958ue} describes, Jim Crow endogenously created \emph{normative} positional relations between Black and White people that transcended the individual. }  That hierarchy was institutionalized through formal laws---which segregated public and private spaces, and severely constrained the political participation of Blacks---as well as informal rules and norms governing everyday behaviors \citep{Kennedy:1990vt,Berrey:2016wm}.\footnote{Police were not just used against Black people differentially in terms of actual law.  They were also used as instruments to enforce norms related to docility and deference and, therefore, to police un-legislated status offenses.}  The instrumental and \emph{symbolic} importance of voting rights made the suppression of Black political power a critical aspect of the overall Jim Crow project.
+
+The VRA upset that order by removing a central political pillar on which it rested.  The \emph{diffuse reactive} mechanism emphasizes how this federally-imposed change threatened the dominance of Whites atop the \emph{entirety} of the racial hierarchy organized by Jim Crow, not simply their direct dominance of political office.  In line with theories of racial threat, the VRA produced a broad threat to White status \citep{Blumer:1958ue,Blalock:1967ud}.\footnote{Again, this is distinct from specifying racial threat in any one realm (e.g., economic, political, etc.). }  This status threat then facilitated behaviors inside and outside carceral institutions as Whites grasped for means of reconstructing a socio-political order built on racial hierarchy that the VRA had fractured \citep{Kinder:1981ww,Kinder:2010wj,Banks:2012uz,Jardina:2019tk}.
+
+This, both rational and affective, reaction may have manifested in racial disparities in incarceration via the exercise of individual discretion in various places in the carceral state \citep[xix-xx]{UnitedStates:1982ty}. It may also have shifted the attitudes of White voters that were in turn aggregated through the political process---including via entrepreneurial politicians who further hastened broad-based attitudinal shifts---to produce carceral policy \citep{Weaver:2007vr,Campbell:2013tw,Enns:2015vz,Kuziemko:2015ts}. But in contrast to the \emph{instrumental political} mechanism described below, the motivation was not elite desire to directly prevent changes in the racial composition of the electorate, but rather a response to diffuse changing attitudes among White voters.
+
+We distinguish this mechanism from pure \emph{backlash} theories of post-Civil Rights behavior \citep{Edsall:1991ut}.  Scholars have offered a strong critique that White backlash \emph{alone} neglects the role of political entrepreneurs in channeling activated racial resentment towards the issue of law and order \citep{Weaver:2007vr,Lopez:2015vp}.  We too emphasize the importance of political entrepreneurs who framed crime as a problem for governmental involvement.  While that innovation had broad electoral goals in terms of cultivating White---and specifically, Southern White voters---it was \emph{effective} because it traded in very real perceptions of status threat and worked within institutions that had long been used for minority social control \citep{Muhammad:2011wf}.
+
+
+
+% Subsection
+%-----------
+\vspace{.12in}
+\textbf{The \emph{Instrumental Political} Mechanism.} \text{  } In contrast to the \emph{diffuse reactive} mechanism, which emphasizes the status threat to individuals caused by the end of Jim Crow, the \emph{instrumental political} mechanism draws its logic from the fact that the VRA posed a direct \emph{political} threat to the incumbent White political establishment.  While Jim Crow was multifaceted, a crucial component was the set of political laws and practices that severely constrained the political participation of Blacks. In order to continue exercising their political control, Whites---and in particular, White political elites---needed new strategies to replace practices banned by the VRA.  The differential use of carceral institutions against Black people was, in this view, an intentional, instrumental strategy of White elites, chosen to \emph{suppress Black political power} and maintain White political dominance.\footnote{Note that this is distinct from an instrumental \emph{partisan} strategy to change the electorate by cultivating a particular kind of White voter.}
+
+As an instrumental tool, the carceral state could have arguably helped to maintain the power of the White establishment elite in a number of ways.  First, police could have been used to directly suppress Black political participation through intimidation and outright prevention (see, e.g., \cite{CivilRightsCommission:1975vd}).  Second, differential application of the carceral state could have indirectly suppressed Black political participation via its effects on the income, education and health of subject communities \citep{Western:2007ut,Burch:2014ug}.  Finally---and most directly---incarceration itself explicitly disenfranchises the felons who experience it.  Most states---and all states in the South pre-1965---did not allow inmates to cast a ballot while incarcerated, and many further barred those with a felony \emph{record} from voting \citep{Manza:2008vp}.\footnote{Contemporary work shows the genuine political consequences of felon disenfranchisement.  Had felons been allowed to vote in the 2000 election, Florida's Electoral College votes would have likely gone to Al Gore, not George W. Bush \cite{Uggen:2002th}.}
+
+The \emph{instrumental political} mechanism thus implies a significant degree of intentionality among White Southern elites.\footnote{We note that there is a type of functionalist logic that seems prevalent in contemporary debates about race-based mass incarceration that suggests that \emph{because} the carceral state produces depressive political effects that this must have been its \emph{intent}, or indeed primary intent.  We contend that empirically testing such causal intent requires evidence beyond the effects alone.}  At the national level, studies of race, the carceral state and partisan politics have consistently revealed such intentionality in the fashioning of crime as a racialized policy from the mid-20th century onwards \citep{Weaver:2007vr}.\footnote{Contemporaneous (and contentious; see \cite{LoBianco:2016wla}) reflections on the political strategy of the time by those who devised it further suggests a fundamental attempt to disrupt Black communities.  ``We knew we couldn't make it illegal to be either against the [Vietnam] war or [to be] Black,'' said John Ehrlichman, advisor to President Nixon, ``But by getting the public to associate the hippies with marijuana and Blacks with heroin, and then criminalizing both heavily, \emph{we could disrupt those communities}'' \citep{Baum:2016uy} (italics added).}  Much of this national rhetoric was founded in the state-level careers of politicians---e.g., Goldwater, Wallace---who then sought national office.
+
+While theoretically well-founded, we note up front a few reasons to question that the \emph{New Jim Crow} was primarily facilitated by an \emph{instrumental political} mechanism.  First, while the instrumental use of the carceral state for elite ends has significant historical precedent (Appendix A), much of what scholars---and in turn politicians---have learned about the disenfranchising consequences of the carceral state has come from relatively recent scholarship.  Second, the scale of the race-based application of the carceral state necessary to directly affect electoral outcomes appears large at first glance.  Nevertheless, the evidence indicates police repression has played a role in deciding close local elections, and deterrence may magnify the impact of observed repression.  Third, although in the post-Civil Rights era covered states are, on average, likely to utilize the type of highly-restrictive felony disenfranchisement laws that could instrumentally compliment race-based increases in incarceration, not all do \citep{Behrens:2003th}. Finally, research shows that much of the rhetoric around law and order was primarily produced to cultivate \emph{White} votes \citep{Phillips:1969tb,Lopez:2015vp}.  There is relatively little evidence that law and order rhetoric---whether on the part of national politicians or state and local elites---was a strategic \emph{directive} to political actors to instrumentally suppress Black voters.\footnote{Though this remains an open question for further research.}
+
+
+% subsection
+%-----------
+\subsection*{The \emph{Self-Policing} Argument}
+
+The \emph{New Jim Crow} focuses on a \emph{reactionary}---whether diffuse or elite-driven---response to Black enfranchisement on the part of a White establishment that was not fully swept aside by the VRA.  By contrast, the \emph{Self-Policing} argument contends that Black people achieved meaningful \emph{de facto} power as a consequence of \emph{de jure} enfranchisement.  In an application of \citep{Downs:1957vg}, it may have been the case that enfranchised Black people meaningfully shifted the policy preferences of the median voter with regards to carceral policy.  Additionally, the VRA gave Black \emph{officeholders} the chance to govern in the South for the first time since Reconstruction in furtherance of Black policy goals \citep{Beach:2017wo}.  But, crucially, whether \emph{Self-Policing} predicts an increase, decrease, or no change in Black incarceration depends \emph{both} on whether Black people achieved \emph{de facto} political influence \emph{and also} whether the newly-enfranchised group had policy preferences about carceral policy that diverged from the pre-enfranchisement status quo.
+
+Contemporary debates about racial injustice in carceral institutions would seem to suggest that newly-enfranchised Black people preferred lowering the carceral burden on their communities.  Indeed, there is ample evidence that before 1965 Black communities wanted for unbiased law enforcement \citep{USCCRUnitedStatesCommissiononCivilRights:1965wk}.  However, important scholarship alternatively contends that many Black people---specifically in the elite and middle class---\emph{favored} an increased law enforcement presence in their own communities, which, in conjunction with improved social welfare provisions, was championed to protect socio-economic gains made in the Civil Rights era from a rise in Black crime victimization \citep{Miller:2008wb,Fortner:2015uz,FormanJr:2017tz}.\footnote{Despite some controversy about Fortner's evidence (see \cite{Murch:2015vu}) we are interested in the applicability of the theory.}  Practicing a so-called ``politics of respectability,'' Black elites and the middle class exposed class divisions within their communities, labelling drug dealers ``Black-face traitors'' as they pushed to rid themselves of the criminal element in their midst \citep{Kennedy:1998te,FormanJr:2017tz}.  The draconian Rockefeller drug laws in New York, a spate of punitive drug and gun laws in Washington D.C., and similar measures taken at the state and local level by Black communities around the U.S. were argued to have been supported, if not spearheaded, by Black elites and Black middle class voters in order to keep their communities safe.\footnote{\cite{Alexander:2012tj} interweaves this logic with that of the \emph{New Jim Crow}, writing: ``Black support for harsh responses to urban crime---support born of desperation and legitimate concern over the unraveling of basic security in inner city communities---helped provide political cover'' to White elite law and order strategies (42).}  If the dynamics found in these particular cases were representative of Black attitudes generally---or, in particular, the attitudes of the voter who became median via the VRA---then increased Black incarceration rates may have resulted via enfranchisement, rather than as a reaction to it.
+
+Yet, we note that these punitive measures were accompanied by few, if any, of the broader welfare provisions for which Black communities were \emph{also} advocating \cite{KohlerHausmann:2015uk}.\footnote{\cite{FormanJr:2017tz}, however, notes that other attempts at non-punitive solutions like needle exchanges and marijuana legalization \emph{divided} the Black community; many viewing those, not as solutions, but as a capitulation to crime.  In a perverse turn, instances of White support for these strategies heightened suspicions that law enforcement was retreating from protecting the Black community.} In arguing that White politicians ``selectively heard'' Black demands for better policing as \emph{punitive} policing without accompanying social reform, scholars like \cite{Hinton:2016td} call into question the extent of \emph{de facto} Black political power in the post-Civil Rights era and, thus, the applicability of the \emph{Self-Policing} argument.
+
+
+
+
+
+
+
+
+%% Observable Implications
+%%------------------------
+\subsection*{Observable Implications of the Arguments}
+
+Both of the theoretical arguments above---the \emph{New Jim Crow}, and the version of \emph{Self-Policing} in which Blacks were \emph{de facto} empowered \emph{and} preferred more aggressive criminal justice policies that would result in greater incarceration---predict the same first-order relationship: we should expect Black enfranchisement from the VRA to result in increased Black incarceration, and differentially higher incarceration among Blacks relative to Whites.  In the subsequent sections of the paper we turn to our data and design for evaluating that first-order relationship, before turning to evidence that can help us adjudicate between these two alternative arguments.
+
+
+
+
+
+
+
+
+%-------------------------------- THE DATA ---------------------------------%
+\section*{Data and Measurement}
+
+In order to evaluate the arguments outlined in the previous section, we collect new data on admissions by race to state prison for the mid-20th century U.S.  First, we construct a state-year dataset that builds from Bureau of Justice Statistics (BJS) data on the race of admissions to state prison covering the period 1926 to 1986.\footnote{\cite{RaceofPrisonersAd:1999ds}.}  While this dataset presents an important starting point for the analysis, it is unfortunately sparse in its coverage.\footnote{The average state has just \input{_n1_ICPSR_avg_obsv_per_state.tex}\unskip~years (\input{_n2_ICPSR_avg_perc_obsv_per_state.tex}\unskip\% of possible) of racially-disaggregated data over that period, and some have no data broken out by race.}  We therefore augment this data though an extensive process of data collection from archival state corrections reports which we use to fill missing years. After this augmentation, following \cite{Honaker:2010wb}, we use the best currently-available multiple-imputation methods to fill in the remaining gaps in our data to generate a balanced panel, while also allowing for appropriate standard error corrections to account for our imputations.\footnote{See Appendix E.}  Second, using our archival state corrections reports, we are also able to construct a state-county-year by race dataset for a subsample of our states (where county refers to the county in which a state prisoner was convicted).  To our knowledge, such county-level cross-state admissions data has never before been assembled for this period.
+
+We measure race over multiple decades in which constructions of race were changing.  To ensure backwards compatibility of our data, we choose to apply the racial categories used in the early years of our data for all periods.  While we refer to our primary measure as \emph{Black prison admissions}, it is actually \emph{non-White prison admissions}, as early incarceration data simply breaks admissions into ``White'' and ``non-White'' (or ``Colored'') categories. As the vast majority of the non-White population in our sample was Black (explaining, in part, why records only used the simple differentiation), we feel the gains we make in sample size from being able to use historical data with these coding rules more than offsets the loss of precision in racial coding from this dichotomization.\footnote{In addition, where non-Whites are also non-Black we note that ``Blacks, Mexican Americans, Puerto Ricans, and Native Americans$\ldots$ have been subordinated socially, economically, and physically by the white majority''  \citep[10]{CivilRightsCommission:1975vd}.}
+
+We consider our focus on the collection of \emph{state} prison admissions data---as opposed to federal prison admissions---a crucial contribution of this research.  It was state---and local officials---who relied on Jim Crow policies prior to 1965.  In turn, they were most affected by the VRA.  States are also the level of government to whom most criminal justice and law enforcement rights are reserved; while local governments are those with the most discretion over policing.  Moreover, as we documented above, states are the jurisdictions which are overwhelmingly responsible for mass incarceration.
+
+We use our dataset to measure the carceral response to enfranchisement in terms of \emph{new felony admission rates to state prisons by race.}   If enfranchisement results in the greater use of the carceral state against Black people by any of its constituent institutions, more Black individuals should find themselves admitted to prison.\footnote{Admission to prison is, however, one of the last observable implications in a chain of institutional changes that may have constituted the carceral response to enfranchisement.  We think that this encompassing nature makes it inherently interesting for this study.  Though it nevertheless underestimates what we might conceptually think is the full carceral response---e.g., those whose carceral journey ends with police stop, arrest, charge, trial, conviction, or sentence without incarceration.}  In addition, many of the most detrimental effects of the carceral state obtain as soon as an individual is imprisoned, regardless of the length of their sentence. Moreover, as our theoretical interest is not in explaining the rise mass incarceration per se, but rather the \emph{response of carceral institutions} in any form, we expect this to be an outcome that is responsive to our treatment.  In the ideal case we would be able to examine both the extensive and intensive margins to construct incarceration rates, but our data sources lack systematic racially disaggregated data on either sentence length or prisoners ``on-hand'' necessary to do so.
+
+We focus on felonies for similar reasons---while misdemeanor convictions can result in many negative outcomes \citep{White:2019ks},  many of the harshest consequences (e.g., disenfranchisement, employment opportunity loss) obtain with felony convictions.  In addition, data on felonies are more consistently reported in our data, as many misdemeanor convictions result in incarceration in local jails rather than state prisons.  Nevertheless, we emphasize that ``quality of life'' crimes and crimes of poverty are likely to be responsive (perhaps even more so) to a similar theoretical argument as we previously laid out.
+
+
+
+
+
+
+
+
+
+
+
+%%------------------------- NEW JIM CROW ------------------------------ %%
+\section*{Empirically Evaluating the Relationship Between the 1965 VRA and Black Incarceration}
+
+In this section, we build on the existing qualitative evidence described in previous sections to systematically evaluate the empirical relationship between Black enfranchisement in 1965 and Black incarceration.
+
+
+% The Empirical Approach: State
+%------------------------------
+\subsection*{The Empirical Approach}
+
+Absent an ideal experiment in an historical setting like this, we proceed by leveraging a combination of state-level geographic variation in Black enfranchisement as a result of Section 5 of VRA, and temporal variation from before to after the Act's 1965 passage in a difference-in-differences design.  As previously described, although many provisions of the VRA applied universally to the U.S., the key provision of the Act was Section 5, which required pre-clearance of changes to voting rules and practices with the DOJ.  We evaluate changes in Black incarceration between jurisdictions covered by Section 5 and those not, from before to after the 1965 VRA using three estimation models: (1) a (linear-in-time) difference-in-differences, (2) a two-way fixed effects model, and (3) a long-differences model.
+
+For our linear-in-time difference-in-differences, for state $i$ in year $t$, we estimate
+\begin{align}
+     y_{it} = \alpha_{i} + \tau T_{t} + \eta \text{Post-1965}_{i} + \beta  (\text{Covered}_{i} \times \text{Post-1965}_{t}) + \theta (\text{Covered}_{i} \times T_{t}) + \nonumber \\
+      \nu (\text{Post-1965}_{t} \times T_{t}) + \omega (\text{Covered}_{i} \times \text{Post-1965}_{t} \times T_{t}) + \boldsymbol{\psi X_{it}}  + \epsilon_{it}  \label{equation_dind_linear}
+\end{align}
+
+where $y_{it}$ is one of our two main outcomes of interest: first, the rate of new Black state prison admissions ($\frac{\text{BlackAdmit}_{it}}{\text{BlackPop}_{it}}$); and second, the \emph{difference} between the rate of new Black state prison admissions and the rate of new White state prison admissions ($\frac{\text{BlackAdmit}_{it}}{\text{BlackPop}_{it}} - \frac{\text{WhiteAdmit}_{it}}{\text{WhitePop}_{it}}$), each normalized as the rate per 100,000 to aid interpretability. The second outcome allows us to account for the fact that both theoretical arguments we outline above predict differential incarceration of Blacks relative to Whites (effectively, a triple-difference).  Even if Whites are caught up in some secular growth of prison admissions, the effect on Blacks is predicted to be \emph{greater}.
+
+To account for observable and unobservable average time-invariant differences (e.g., average crime rates over the period, average carceral resources, and average levels of racial animosity) in the propensity of jurisdictions to incarcerate individuals by race, we include state-level fixed effects ($\alpha_{i}$).\footnote{Note that the estimate of \emph{covered} is already absorbed in the state fixed effects.}  The variable $\text{Post-1965}_{t}$ is an indicator for years after the passage of the 1965 VRA, $\text{Covered}_{i}$ is an indicator for states covered by Section 5 in 1965, and $T$ is a linear time trend (set to $T=0$ in the calendar year 1965) that captures any general (linear) relationship between time and incarceration.  We also account for the time-varying effects of urban population ($X_{it}$).  We cluster our standard errors by state, and further correct standard errors for the estimation uncertainty from our imputation of missing incarceration data.\footnote{See Appendix E.}
+
+In equation~\ref{equation_dind_linear}, we are primarily interested in the parameter $\omega$, which measures the \emph{average change in the difference in incarceration admissions' linear trend after 1965 between states that were covered by Section 5 and those that were not} (after accounting for the other time-varying covariates).  In line with both theories, we would expect $\omega$ to be positive.  One might also consider $\beta$ of interest.  It measures whether there was a differential \emph{level} shift in Black carceral admissions in 1965 by coverage status, as distinct from the trend change.  Because of the time it takes to adjust policing, sentencing, and so on, we think an immediate level shift is less likely than a change in trend. However for completeness, we present an estimate of the joint value (and test of significance) of $\omega$ and $\beta$ evaluated at 1980.
+
+To infer that $\omega$ estimates a \emph{causal} effect, we need to assume that in the absence of Section 5, trends in incarceration outcomes in covered jurisdictions would have continued the same as in never-covered jurisdictions.\footnote{Because we employ state fixed effects, the threat to inference in our design arises from factors that vary over time that might cause \emph{both} coverage under Section 5 \emph{and} changing incarceration trends.  We emphasize that these confounders cannot simply be \emph{general} trends in, for example, crime, as these trends are captured in our existing generalized time trends.}  This counterfactual assumption is inherently untestable.  However, we employ the standard evidence in support of that assumption---namely that pre-1965 trends in incarceration were parallel between never-covered and to-be-covered states.
+
+It's important to note that we do not control for the crime rate in our specification due to significant concerns about endogeneity. Measures of crime are not objective indicators; rather, what gets logged as a crime (or, in many cases, doesn't get logged) is at the discretion of the very carceral state we seek to study \citep{Black:1970wu,Muhammad:2011wf}.\footnote{See too \cite{Ward:2015tc}, who describes the ways in which Civil Rights events and White reactions to them were differentially treated by the police.}  In addition to the possible endogeneity of crime \emph{reporting}, there are also endogeneity concerns surrounding ``objective'' crime rates, could they even be measured as such. Although we empirically focus on incarceration as an outcome, both arguments that we evaluate predict significant changes in policing in response to enfranchisement. As a result, they suggest that passage of the VRA might actually have a causal effect on what crime is able to be observed (and thus recorded), as a function of changes in patterns of policing.
+
+As a result of these types of concerns, an important body of scholarship in effect argues that crime rates are not a valid control variable, but rather a \emph{mechanism} via which racial differences in law enforcement produce end-line carceral outcomes \citep{Beckett:2006wf,Lynch:2014wi,VanCleve:2015ux}.\footnote{Crime likely still remains used as a control because, as \cite{Murakawa:2010tc} and \cite{Murakawa:2019wp} note, the literature has long-held the baseline assumption that institutions are colorblind until proven otherwise.  This assumption is coupled with a nearly insurmountable burden, as \cite{KohlerHausmann:tw} describes, for demonstrating that institutions---and, in particular, law enforcement---are \emph{not}.}  Viewed in this way, crime levels (and especially \emph{changes} in crime that occur in 1965) would not exert an \emph{independent} effect on prison admissions.  Instead, we worry that they are likely to introduce post-treatment bias.  Finally, we note that for crime rates to drive our results, it must be that covered and uncovered jurisdictions had different \emph{potential (incarceration) outcomes} as a function of different \emph{trends} (not merely average levels) in crime (after accounting for trends in urbanization, which we include).
+
+
+We prefer equation~\ref{equation_dind_linear} for three reasons.  First, given the relatively small sample of states covered by Section 5 in 1965 (and plausible counterfactual states), imposing a linear functional form on time allows us to maximize our degrees of freedom.  Second, as we will show, the post-1965 trends in incarceration appear to be quite linear. Therefore, we do not believe that this functional form assumption obscures meaningful patterns in the data.  Finally, unlike a simple two-way fixed effect model, we can separately account for the fact that it appears that states covered by Section 5 did not immediately adjust their behavior (i.e., there was not a single large level shift right at 1965); rather, it appears states took time respond to their new reality.
+
+We also estimate a two-way fixed effects model
+\begin{align}
+     y_{it} = \alpha_{i} + \gamma_{t} + \beta (\text{Covered}_{i} \times \text{Post-1965}_{t}) + \boldsymbol{\psi X_{it}} + \epsilon_{it}  \label{equation_dind_np}
+\end{align}
+in which we utilize year fixed effects ($\gamma_{t}$) that account for year-specific shocks to incarceration common to all states in the sample (e.g., crime trends, the national economy).  This is a more flexible parametric approach, though also one, given our sample size, that significantly reduces our degrees of freedom.  In equation~\ref{equation_dind_np}, the parameter of interest is $\beta$---the average post-1965 difference in incarceration trends between states covered by Section 5, and those un-covered.
+
+Finally, following (among others) \cite{Washington:2014tk} and \cite{Facchini:2020tb}, we estimate a long-difference specification in which we again estimate equation~\ref{equation_dind_np}, but exclude data from 1965-1975. By focusing only on ``\emph{long-term}'' differential changes, a long-difference specification like this is well-suited to situations where agents require some time to adapt to changes (here, passage of Section 5) by excluding the adjustment period from estimation.\footnote{This exclusion window is based on the findings in Figure~\ref{figure_state_section5} and Appendix L).} This allows us to maintain the flexibility of a two-way fixed effect model without our estimates being downwardly biased by averaging over an initial period of adjustment. In our long-difference specification, our estimate of $\beta$ is the average difference over the ``long run'': from pre-1965 to post-19\emph{75} between states covered by Section 5, and those un-covered.
+
+We estimate these models with OLS, and use a balanced sample of states with (1) a long time series of available incarceration data, and (2) comparable historical experiences of racial segregation to, as best as observationally possible, approximate the counterfactual for covered states.  For (2), we focus on the twenty states defined by \cite{Katznelson:2012vu}, among others, as having had racial discriminatory ``Jim Crow'' policies prior to 1965 (15 of which also allowed slavery). Of these 20, we are able to collect data for 18.  Our main analysis sample therefore includes  \input{_n4_statelist_main_vra1.tex}\unskip~(covered); and \input{_n3_statelist_main_vra0.tex}\unskip~(uncovered).\footnote{In the estimation of the state-level results, we include North Carolina as a covered state even though only $\sim$\unskip half of the counties were covered by Section 5. We do so because the counties covered by Section 5 account for the vast majority of North Carolina's Black population. This, in effect, biases against finding a result different from zero as we are treating a partially-treated state as fully treated.  We engaged in an arduous search to locate county-level prison admissions by race data for North Carolina to exploit this county-level variation, but could not find them.}
+
+
+
+
+% The Empirical Results: State
+%------------------------------
+\subsection*{Results}
+
+Figure~\ref{figure_state_section5} presents the graphical results of the difference-in-differences for the rate of Black state prison admissions.\footnote{For individual state plots see Appendix C.}  First, we observe that \emph{uncovered} states had higher Black admissions rates on average than their to-be-covered counterparts.  This descriptive evidence could accord with the notion that Jim Crow institutionalized racial \emph{order}, negating the need for additional carceral control.  But after 1965, as Figure~\ref{figure_state_section5} indicates, there was a differential increase in Black prison admissions in states covered by Section 5 relative to those uncovered.  By 1985, Black admission rates in covered states had surpassed those in uncovered states.
+
+
+
+
+%  FIGURE: Section 5 and Black Incarceration
+%-------------------------------------------------------------
+\begin{figure}[t!]
+	\begin{center}
+	\caption{Section 5 coverage and the Black prison admissions rate}
+		\small \vspace*{.05in}
+		\smallskip
+				\includegraphics[ width=5.8in,  clip=true,  trim= 0.0in 0.0in 0.0in 0.0in ]{_f2_plot_state_dind_Black_wnc_main.pdf}
+		\label{figure_state_section5}
+		\end{center}
+	\scriptsize{\emph{Notes:} The sample of states includes: \input{_n4_statelist_main_vra1.tex}\unskip~(covered); and \input{_n3_statelist_main_vra0.tex}\unskip~(uncovered).  The scatter presents the averages of the raw data for states in each coverage category.  The lines are local polynomial fits (bandwidth=2) and 95\% confidence intervals. Note that due to software limitations, standard errors in these plots do not reflect uncertainty due to missing data imputation. See Table~\ref{table_state} for analogous estimates with corrected standard errors.}
+\end{figure} \normalsize
+
+
+In terms of the difference between Black and White prison admissions rates, Figure~\ref{figure_state_difference} also shows graphical evidence that rates grew faster in covered states after the VRA than in uncovered states.\footnote{For individual state plots see Appendix D.} If there are factors---such as generalized crime, or an generally increasing preference for punitiveness---affecting both sets of prison admissions rates regardless of race, then we would not expect to see these differential trends. Instead, Figure~\ref{figure_state_difference} is consistent with the theoretical arguments---that Section 5 caused more incarceration of Black people.
+
+Both figures also show evidence of parallel trends in admissions rates between to-be-covered and always-uncovered states in the decades preceding the VRA.  We therefore gain confidence that \emph{in the absence of Section 5 coverage} trends in Black admissions \emph{would have} continued the same between the two types of states.
+
+
+
+
+%  FIGURE: Section 5 and Difference Black-White Incarceration
+%-------------------------------------------------------------
+\begin{figure}[t!]
+	\begin{center}
+	\caption{Section 5 Coverage and the difference between Black and White admission rates}
+		\small \vspace*{.05in}
+		\smallskip
+				\includegraphics[width=6.8in,  clip=true,  trim= 0.0in 0.0in 0.0in 0.0in]{_f3_plot_state_dind_difference_wnc_main.pdf}
+		\label{figure_state_difference}
+		\end{center}
+	\scriptsize{\emph{Notes:} The sample of states includes: \input{_n4_statelist_main_vra1.tex}\unskip~(covered); and \input{_n3_statelist_main_vra0.tex}\unskip~(uncovered).  The scatter presents the averages of the raw data for states in each coverage category.  The lines are local polynomial fits (bandwidth=2) and 95\% confidence intervals. Note that due to software limitations, standard errors in these plots do not reflect uncertainty due to missing data imputation. See Table~\ref{table_state} for analogous estimates with corrected standard errors.}
+\end{figure} \normalsize
+
+
+
+Table~\ref{table_state} presents formal estimates of the effect of Section 5 coverage on Black and Black-minus-White prison admissions for each of our specifications.  Columns 1 and 4 present the results from estimating equation~\ref{equation_dind_linear} (linear in time). These results are consistent with the graphical results above---we observe parallel trends in the pre-1965 period (the coefficient on $Covered \times T$ is nearly zero), we observe very little immediate differential change in the \emph{level} of incarceration following passage of Section 5 (the coefficient on $Post-1965 \times Covered$ is also nearly zero), but we see a marked differential increase in the trajectory of incarceration among states covered by Section 5 ($\omega$ is large and positive). Indeed, evaluated at 1980, this implies a difference-in-difference increase of about 65 Black prison admissions per 100,000 among covered versus uncovered states.
+
+Similarly, Columns 2 and 5 present the estimates from our two-way fixed effects model. This estimate is similar but smaller than the estimate of the difference-in-difference in 1980 from Columns 1 and 4---this is to be expected as we know from both the plots above and the estimates in Columns 1 and 4 that prison admissions did not immediately change after 1965 but rather began trending up.  Therefore, an average over this entire period will under-estimate the difference we see after the carceral state has fully responded to passage of Section 5.  This can be seen in our ``long-difference'' specification in Columns 3 and 6, which include the same two-way fixed effects as Columns 2 and 5, but exclude the initial period of transition (1965-1975).  As expected, these estimates are larger than those that take into account the entire period, and are in line with the results from Columns 1 and 4 evaluated at 1980.
+
+These estimates constitute substantially large effects. For context, the average Black incarceration rate per 100,000 people in our sample of states was \input{_n5_states_mean_black.tex}\unskip~with a within-state standard deviation of \input{_n6_states_std_black.tex}\unskip. Thus, this effect size of +57 per 100,000 people constitutes more than a one standard deviation increase in incarceration rates, an effect about equal to an increase of more than one third of the average incarceration rate.
+
+The magnitude of Black minus White incarceration rates is similar---the average Black minus White incarceration rate in our sample was \input{_n7_states_mean_bminusw.tex}\unskip~per 100,000 with a within-state standard deviation of \input{_n8_states_std_bminusw.tex}\unskip, making the estimated effect size of +49 per 100,000 more than a one standard deviation increase, and more than a 1/2 standard deviation increase over the cross-state average.
+
+
+
+% TABLE 1: State results
+%-------------------------
+\begin{table}[t!]\centering \footnotesize
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+	\caption{State results for Section 5 and the Black admissions rate}\label{table_state}
+	\smallskip
+	\begin{tabular}{@{\extracolsep{5pt}}l*{7}{c}}
+	\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
+			&  \multicolumn{3}{c}{Black Prison }  & \multicolumn{3}{c}{Black Minus White}  \\
+			&  \multicolumn{3}{c}{Admissions per 100,000} & \multicolumn{3}{c}{Admissions per 100,000}  \\
+			\cline{2-4} \cline{5-7}   \noalign{\smallskip}
+				\input{_t1_table_threefold_diff_main_MI_ols.tex} \\
+	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
+\multicolumn{7}{p{7.0in}}{\scriptsize Table shows estimates of the impact of Section 5 coverage on two outcomes: Black prison admission rates per 100,000 people (columns 1-3) and the difference between Black and White prison admission rates (columns 4-6). Columns (1) and (4) present our linear-in-time difference-differences including the implied estimate at 1980. Columns (2) and (5) estimate our two-way fixed effects model. Columns (3) and (6) estimate our ``long-difference'' with 1965-1975 dropped to account for the fact states may have been slow to respond to passage of the VRA, causing the effect of the VRA to be under-estimated if these early years of adjustment are included. All models are estimated using OLS.  Multiple imputation adjustments are made to account for missing data interpolation and associated estimation uncertainty. Errors are also clustered by state. All regressions include a control for share of population living in urban areas.} \\
+\multicolumn{7}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}
+
+These results appear quite robust. In Appendix K, we estimate this specification using Feasible Generalized Least Squares, and get very similar results. In Appendix J, we re-estimate the statistical significance of our effect using Fisher Randomization Tests \citep{Fisher:1935uc} and get very similar results. Appendix F shows results when we repeatedly fit our model while excluding states one-by-one, and find our treatment effect estimates are quite stable, albeit with slightly lower levels of statistical significance consistent with the smaller sample sizes.
+
+Appendix N presents data on the robustness of our conclusions to Maximally Influential Perturbations \citep{broderick2021}. It finds that results do tend to fall below statistical significance with the removal of a relatively small number of the most influential observations (unsurprising given our sample size and significance levels), but that we would need to selectively remove \emph{at least} 20\% of our data for the sign of our estimates to change, and no amount of data removal could generate statistically significant results in the other direction.
+
+And finally, in Appendix L we estimate our treatment effect separately for five-year time periods to show (1) that prior to 1965 there is no evidence of an ``effect'' of eventually being covered by Section 5, and (2) that the lag in response to Section 5 seen in Figure~\ref{figure_state_section5} that motivates our long-difference specification is also evident in a more rigorous regression framework.
+
+We take both the graphical and econometric results to suggest that Section 5 coverage resulted in more incarceration of Black people (as a rate, and relative to Whites) after 1965.  Though we lack a true randomized experiment, our ability to evaluate parallel pre-treatment trends and account for all time-invariant heterogeneity (as well as some observable time-varying factors) that might differently affect potential outcomes under Section 5 lends support to a causal interpretation of the results.
+
+
+
+%--------------------------- SELF-POLICING ------------------------------------%
+\section*{Understanding the Mechanisms}\label{section_selfpolicing}
+
+In the previous section, we established a substantively important positive relationship between Black enfranchisement under Section 5 coverage and Black incarceration after the 1965.  This evidence is consistent with \emph{both} our articulation of the \emph{New Jim Crow} argument and the version of the \emph{Self Policing} argument in which newly enfranchised Black voters shifted policy toward the increased use of the carceral state in their own communities.  In this section, we set about looking for evidence in support of, or inconsistent with, these theoretical arguments.
+
+In particular, we focus on two questions that are key to understanding whether the rise in incarceration documented above was driven by White response to the VRA, or the newfound influence of Black voters: first, was it the case that Black voters consistently preferred the increased use of the carceral state in their own communities; and second, were Black voters actually \emph{de facto} empowered by the VRA such that their policy preferences could impact outcomes, or was incarceration primarily observed in areas under White political control.
+
+
+%% Sub-Section
+%%-------------
+\subsection*{Black Policy Preferences Regarding the Carceral State}
+
+For it to be the case that Black voter demands drove the rise in incarceration (the \emph{Self-Policing} argument) rather than the actions of the White electorate and White politicians, it must have been the case that a politically influential contingent of Black voters preferred a \emph{more} punitive carceral state \emph{relative to} Whites, such that enfranchisement under the VRA empowered this contingent to push for \emph{more} punitive policies, resulting in greater incarceration of Black people.
+
+Though it is far from the only model of political influence, the most straightforward model of how enfranchisement might impact electoral outcomes is by changing the electorate's median voter \citep{Downs:1957vg}.  If a majority coalition of Black voters held attitudes that were more punitive than the extant median White voter, then their entry into the electorate would have moved the electorate's median in a punitive direction (all else equal).  Crucially, this majority coalition may have been reflective of Black policy preferences, on average, or it may have reflected a particular politically-relevant sub-group; for instance, elite and middle class voters only.\footnote{As \cite{Fortner:2015uz} and \cite{FormanJr:2017tz} argue pushed for more aggressive carceral policies in New York and Washington D.C.  We note that an elite-led model of political influence might ascribe political importance to even smaller sub-groups, or even individuals undetectable by our survey approach below.  For that reason, the subsequent section analyzes observed measures of political influence where we would expect such elite influence to obtain.}
+
+To see this, consider the pre-1965 period. If the median Black person preferred a \emph{more} punitive carceral state than the median White voter, then subsequent enfranchisement of Black voters would have shifted the overall electorate's median towards more punitive outcomes, allowing Black voters the electoral power to (better) translate those preferences into carceral policy outcomes.  By contrast, if the median Black person preferred \emph{less} punitive policies to the median White voter, then enfranchisement should result in a decrease (or slower growth) in incarceration all else equal (conditional too on the \emph{de facto} representation of those preferences). Therefore, even if Black people preferred a ``high'' degree of punitiveness (setting aside what that would mean, exactly), what matters is how those preferences compared to Whites who would otherwise have been in power.\footnote{This implicitly assumes that punitive preferences are constant for each race, or alternatively, that the difference in their trends is constant. The argument of the \emph{New Jim Crow} is, by contrast, that White preferences changed in 1965.}
+
+As detailed in Appendix I, however, data from pre-1965 Gallup surveys and a 1969 survey specifically on attitudes about violence \citep{Violence1969} do not support the idea that Black voters held more punitive attitudes. According to these surveys, Black respondents were \emph{less} likely than Whites to say that the police should have more power---or that the criminal justice system \emph{in general} needed more power---and \emph{more} likely than Whites to say that police were too powerful.  Blacks were also less likely to say that courts were too lenient, or that the courts had made it too difficult to punish criminals; and they also preferred that the state use \emph{less} ``violence'' against gangs.
+
+Not only do we find that this is true for Black respondents on average, we also find it to be true if we focus exclusively on ostensibly middle and upper-class Black respondents.  We find some evidence that such respondents may have held more punitive attitudes than their lower class counterparts, but, crucially, their attitudes were still \emph{less} punitive than Whites who otherwise would have held political power.  We also examine attitudes towards drug crime, in particular, under the assumption that drug crime may have driven differential incarceration rates.  However, using Gallup data from a 1969 survey of sentencing preferences by crime, we find no evidence that Black respondents held more punitive attitudes on drug crime, specifically, relative to White respondents; nor do we find that middle and upper class Blacks held such differentially punitive attitudes on drug crime.
+
+Given this evidence, it is difficult to infer that at the time of the VRA's passage Blacks preferred a more punitive carceral state to Whites in a way that would explain our results. Instead, this evidence supports interpreting our results as deriving from the \emph{New Jim Crow}.
+
+
+%% Sub-Section
+%%-------------
+\subsection*{Black Political Empowerment}\label{section_blackpoliticalempowerment}
+
+Despite the lack of evidence that Black people differentially preferred more punitive policies---on average, or in key theorized sub-populations---we separately assess the extent of Black political empowerment and its relation to incarceration. The challenge in doing so is that we are not simply interested in \emph{de jure} outcomes like registration rates because the path from the franchise to policy outcomes is fraught---e.g., registered voters may not vote, institutions may malapportion and reduce the effective power of even large voting blocs, or bureaucratic (carceral) actors may be well-insulated from elected policymakers.\footnote{It was not until 1980, for example, that Black officials formed a majority of the county commission in 80\% Black Lowndes County, Alabama \citep{Jeffries:2009wq}.}
+
+
+Therefore, we first evaluate heterogeneity in the impact of Section 5 enfranchisement on incarceration by estimating our long difference-in-differences model (equation~\ref{equation_dind_np}) separately for bins of counties with differing Black population shares.\footnote{Our results are consistent with using the Black share of registered voters (Appendix G).} We use county data from Alabama, Georgia and Tennessee because (1) we have county-level data by race by year, and (2) the average effect for these states is comparable to the average effect that we previously found (i.e., they represent ``typical'' cases \citep{Seawright:2008us}).\footnote{See Appendix G.}
+
+If it is indeed the case that Section 5 of the VRA contributed to increased prison admissions by empowering Black voters who then pushed for more aggressive use of the carceral state in Black communities, then we should expect to see Black incarceration \emph{increasing in} the entire range of the Black population distribution.  If instead, White elites wielded the carceral state \emph{against} Black communities as the \emph{New Jim Crow} predicts, then we would expect differential Black incarceration to increase in the Black population (where the population share constitutes a measure of threat), but only up to the point that Black populations are most likely to fully control political power; that is, where the Black population constitutes a majority.  Above that majority threshold, we would expect differential incarceration by race to decline.  Thus, while \emph{both} the \emph{New Jim Crow} and \emph{Self-Policing} arguments predict incarceration should be increasing in Black population up to a point, we obtain analytic leverage from those places with more than 50\% of the population who are Black.\footnote{We note here a few important features of this analysis.  First, although we have a sample of more than 350 counties, we are effectively comparing heterogeneity in the effect of Section 5 between two covered states (Alabama, Georgia) and a single uncovered state (Tennessee).  Thus, we look to these results as suggestive given small sample noise (in terms of treatment).  Second, we are further restricted when we examine the crucial subset of counties with Black populations above 50\%, of which there are only two counties in uncovered Tennessee.  We note, however, that in our \emph{entire} sample of uncovered states, there are only ten counties with a population $>$50\% Black.  In short, majority-Black counties are rare in the U.S. Finally, we acknowledge that 50\% is an obvious threshold, but an imperfect one.  Even in a majoritarian system, there are institutional factors that might alternatively augment minority groups power, or suppress that of majorities.}
+
+
+% TABLE: Heterogeneity black voters Black admissions
+%---------------------------------------------------
+\begin{table}[t!]\centering \footnotesize
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+	\caption{Heterogeneity in the effect on the Black prison admission rate by the Black share of population}\label{table_heterogeneous1}
+	\smallskip
+	\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
+    	\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
+					&  \multicolumn{4}{c}{Outcome: Black prison admission rate per 100,000} \\
+    			\cline{2-5}   \noalign{\smallskip}
+					&  \multicolumn{4}{c}{Each model sample restricted by} \\
+					&  \multicolumn{4}{c}{Black Share of Population Immediately Post-VRA} \\
+    			\input{_t2_heterogeneous_pop_black_rate_ols_MI_threestates.tex} \\
+	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
+    \multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+    \multicolumn{5}{p{5.1in}}{\scriptsize  \emph{Notes}: The above models estimate the long difference version of equation~\ref{equation_dind_np} for different levels of Black population in the immediate post-VRA period, dropping the years 1965-1974.  In Appendix G, we observe similar non-monotonicities using the Black share of registered voters. The cut points are chosen based on the distribution county Black population, with the constraint of one group above 50\%.  We note that only two non-covered counties enter into our sample in model 4.  We include a control for share of the county that is urban.  We exclude counties with less than 5\% of the population Black.}
+\end{tabular}
+\end{table}
+
+We report our results in Table~\ref{table_heterogeneous1} where each column represents our estimate of the difference-in-differences parameter for different cuts of the Black population.  For counties that are not majority Black, we find that the effect of Section 5 coverage on our incarceration outcomes increases with the size of the Black population. However, the tables provide some suggestive evidence that differential Black incarceration was relatively lower for Black populations above 50\%. Results as similar when measuring Black minus White incarceration rates (Appendix M).
+
+These results indicate that Black political power in this form did not \emph{reduce} the carceral burden on Black communities after 1965.  Instead our estimates suggest that it translated into the ability to \emph{limit the growth of} racially-differentiated incarceration.  We focus on comparing the magnitude of the results here, rather than the precision of the estimates, noting the very small sample sizes.  Indeed, the meaningful null hypothesis is whether the estimates are different from one another, not zero, which unfortunately we cannot reject.  Overall, our results are consistent with the \emph{New Jim Crow} argument.
+
+Another way of conceptualizing Black political efficacy is by examining descriptive representation. The presence of Black elected officials may be indicative of Black electorates that were able to overcome participatory hurdles and obtain \emph{de facto} influence.  Examining outcomes in communities with Black elected officials is also a reasonable test of the \emph{Self-Policing} model if one believes in an elite-led model of political influence, in which a small portion of the electorate holds disproportionate influence over policymaking and implementation, as these are the localities where we would expect that influence to be seen.\footnote{Indeed, the priority of organizations like the Student Non-Violent Coordinating Committee (SNCC) and the Voter Education Project (VEP) in the South was not to make White elites more \emph{accountable} to Black voters, but rather to help Black people obtain political office themselves.}
+
+Therefore, we also examine county-level heterogeneity in our main effects by the presence of local (i.e., county and municipal) Black elected officials.\footnote{See Appendix H.  We expect to find such heterogeneity if \emph{Self-Policing} explains our main results even if the attitudinal measures in the previous section fail to capture the policy preferences of a small but politically-relevant Black elite.}  We digitize sixteen years of data from the \emph{Roster of Black Elected Officials} and pair it with our county admissions to state-level prison.  We find suggestive evidence that in counties with Black elected officials, Black incarceration rates were \emph{lower} than in counties without any Black elected officials. This provides additional evidence suggesting that increases in incarceration were not driven by the choices of newly-empowered Black voters or politicians.
+
+While no individual result presented here is definitive, taken together, we interpret the constellation as evidence that Whites did differentially utilize carceral institutions against Black communities after the VRA (though whether this was the result of top-down intentionality or diffuse actions is unfortunately beyond the scope of this analysis).  Overall, we consider the main results we observe to have more likely arisen as a consequence of the \emph{New Jim Crow} argument.
+
+
+
+
+%-------------------------------- CONCLUSION ---------------------------------%
+\section*{Conclusion}
+
+In this paper, we investigate the link between one of the core components of democracy---the franchise---and the use of the carceral state.  We do so in the context of the 1965 Voting Rights Act in the U.S., which sought to dramatically expand Black political power.  Analyzing newly-collected state and county-level data on incarceration by race both before and after the VRA, we find that states covered by Section 5 experienced a differential growth in Black incarceration after 1965 relative to states that were not covered.
+
+By examining evidence of Black carceral attitudes, and county-level heterogeneity in our results by each Black population, and Black elected officials, we conclude that our results are most likely to derive from White reaction to the crumbling of the Jim Crow socio-political order. Our results represent the first causal test of a prominent theory that the origins of race-based mass incarceration in the U.S. are rooted in the racial struggles of the 1960s and their associated institutional changes \citep{Alexander:2012tj}. They further demonstrate the long legacy of the use of the carceral state as a means of minority social control in the US \citep{Oshinsky:1997up,Blackmon:2009wo,Muhammad:2011wf,Mazumder:2019tp}.  The implied perversity of the \emph{New Jim Crow} argument, and thus our findings, is that even \emph{de jure} enfranchisement was not enough for Black people to fully escape these legacies.
+
+Our findings have implications for the future study of the relationship between race, enfranchisement and incarceration in the US.  First, our paper contributes a detailed articulation of the \emph{New Jim Crow} argument, and what we consider its two primary potential mechanisms.  We currently lack the evidence necessary to evaluate which---or whether both---explain our results, but such evidence would shed light on the conditions under which we would expect a similar use of carceral control to obtain.  In addition, we study an important outcome near the end of the carceral process.  Further work, in the vein of \cite{Facchini:2020tb}, could illuminate which places within this process contribute most to the end result.
+
+Our findings are situated in a particular country case and historical context that has generated significant scholarly debate.  Nevertheless, our research speaks to the literature on democratization via enfranchisement, more broadly. As noted by scholars such as \cite{KeyJr:1950ta} and \cite{Mickey:2015vh}, the U.S. South in the early twentieth century was a collection of one-party authoritarian enclaves in a larger democratic polity.  Enfranchisement via the VRA was not so much a transformation of national-level institutions as it was an \emph{imposition} of enfranchisement \emph{from} those institutions to the jurisdictions below.  Our paper demonstrates one institutional outlet of reification when such democratization is imposed---largely unwillingly---from centers of national power. By virtue of the federal system in the U.S., states reserved ample scope for reactive policy when national power imposed and enforced sub-national democratization, illustrating the challenges of ensuring equality of access to even the most basic rights in a federalist system.\footnote{See \cite{Miller:2008wb} for a related, but distinct, argument.} Further work could better understand how endogenous, as opposed to exogenous, enfranchisement shapes elite responses via the carceral state, as well as how these results might be conditioned by the institutional relationship between national and sub-national governments.
+
+Our findings also speak to current debates about mass incarceration in several ways. First, the modern criminal justice system is full of positive feedback loops that carry forward past inequities.\footnote{This is perhaps best exemplified by risk assessment algorithms that take into account factors like the incarceration history of defendants' parents \citep{ProPublica2016}.} Given that, it is impossible to normatively evaluate the consequences of the modern criminal justice system without understanding the origins of inequities \emph{reinforced} by the current system.  In addition, our study provides yet another demonstration that incarceration rates are not a mechanical reflection of crime; instead, they are politically and socially determined outcomes under the control of the people \citep{Garland:1990uv}. In the mid-century U.S., that fact contributed to the \emph{rise} of the racially-disproportionate incarceration of Blacks. Moving forward, however, it is a reminder that mass incarceration is a fundamentally political problem, and one that can be affected through political change.
+
+
+
+
+
+%-------------------------------- REFERENCES ---------------------------------%
+\singlespacing
+\clearpage
+\newpage
+
+
+\bibliography{EubankFresh_Incarceration_bibliography.bib}
+\bibliographystyle{apsr.bst}
+
+
+
+
+
+
+%------------------------------ END OF DOCUMENT ------------------------------------%
+
+\end{document}
