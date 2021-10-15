@@ -14,7 +14,7 @@ load(paste0("../../20_intermediate_data/40_analysis_datasets/15_state_analysis_d
 onedf <- out.lpoly$imputations[[1]]
 onedf
 
-for (i in 1:5) {
+for (i in 1:20) {
     onedf <- out.lpoly$imputations[[i]]
     onedf["st_icpsr_MI_rate_bminusw"] <- (onedf["st_icpsr_MI_rate_black"] -
         onedf["st_icpsr_MI_rate_white"])

@@ -103,7 +103,7 @@ cd $NewJimCrow/20_intermediate_data/40_analysis_datasets/15_state_analysis_data_
 
 foreach i in black bminusw {
 
-        forvalues d = 1/5 {
+        forvalues d = 1/20 {
             use njc_MI`d', clear
             bysort state: egen temp_mean = mean(st_icpsr_MI_rate_`i')
             gen demeaned_`i' = st_icpsr_MI_rate_`i' - temp_mean

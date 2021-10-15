@@ -155,7 +155,7 @@ forvalues x = 1/2 {
 
 	* plain vanilla part 1
 	*---------------------
-    forvalues i = 1/5 {
+    forvalues i = 1/10 {
 
         use ctyMI`i', clear
 
@@ -222,7 +222,7 @@ forvalues x = 1/2 {
 
 	* plain vanilla part 2
 	*---------------------
-    forvalues i = 1/5 {
+    forvalues i = 1/10 {
 
         use ctyMI`i', clear
 
@@ -369,7 +369,7 @@ forvalues x = 1/2 {
 
 	* plain vanilla part 1
 	*---------------------
-    forvalues i = 1/5 {
+    forvalues i = 1/10 {
 
         use ctyMI`i', clear
 
@@ -432,7 +432,7 @@ forvalues x = 1/2 {
 
 	* plain vanilla part 2
 	*---------------------
-    forvalues i = 1/5 {
+    forvalues i = 1/10 {
 
         use ctyMI`i', clear
 

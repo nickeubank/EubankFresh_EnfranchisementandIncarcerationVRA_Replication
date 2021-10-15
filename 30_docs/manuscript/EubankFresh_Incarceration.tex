@@ -356,9 +356,9 @@ Table~\ref{table_state} presents formal estimates the effect of Section 5 covera
 
 Similarly, Columns 2 and 5 present the estimates from our two-way fixed effects model. This estimate is similar but smaller than the estimate of the difference-in-difference in 1980 from columns 1 and 4---this is to be expected as we know from both the plots above and the estimates in Columns 1 and 4 that prison admissions did not immediately change after 1965 but rather began trending up.  Therefore, an average over this entire period will under-estimate the difference we see after the carceral state has fully responded to passage of Section 5.  This can be seen in our ``long-difference'' specification in columns 3 and 6, which include the same two-way fixed effects as Columns 2 and 5, but exclude the initial period of transition (1965-1975)---as expected, these estimates are larger than those that take into account the entire period, and are in line with the results from Columns 1 and 4 evaluated at 1980.
 
-These estimates constitute substantially large effects. For context, the average Black incarceration rate per 100,000 people in our sample of states was \input{../../50_results/states_mean_black.tex}\unskip~with a within-state standard deviation of \input{../../50_results/states_std_black.tex}\unskip. Thus, this effect size of +57 per 100,000 people constitutes more than a one standard deviation increase in incarceration rates, an effect about equal to an increase of more than one third of the average incarceration rate.
+These estimates constitute substantially large effects. For context, the average Black incarceration rate per 100,000 people in our sample of states was \input{../../50_results/states_mean_black.tex}\unskip~with a within-state standard deviation of \input{../../50_results/states_std_black.tex}\unskip. Thus, this effect size of +55 per 100,000 people constitutes more than a one standard deviation increase in incarceration rates, an effect about equal to an increase of more than one third of the average incarceration rate.
 
-The magnitude of Black minus White incarceration rates is similar---the average Black minus White incarceration rate in our sample was \input{../../50_results/states_mean_bminusw.tex}\unskip~per 100,000 with a within-state standard deviation of \input{../../50_results/states_std_bminusw.tex}\unskip, making the estimated effect size of +49 per 100,000 more than a one standard deviation increase, and more than a 1/2 standard deviation increase over the cross-state average.
+The magnitude of Black minus White incarceration rates is similar---the average Black minus White incarceration rate in our sample was \input{../../50_results/states_mean_bminusw.tex}\unskip~per 100,000 with a within-state standard deviation of \input{../../50_results/states_std_bminusw.tex}\unskip, making the estimated effect size of +50 per 100,000 more than a one standard deviation increase, and more than a 1/2 standard deviation increase over the cross-state average.
 
 
 
@@ -700,7 +700,7 @@ Table~\ref{table_coverage} describes the jurisdictions covered by the 1965 VRA a
 % %-------------------------------------------
  \begin{figure}[h!]
  	\begin{center}
- 	\caption{Trends in Black prison admissions rates by state (with imputations, continued)}
+ 	\caption{Trends in Black prison admissions rates by state (continued)}
  	\small
 
  		\vspace{.2in}
@@ -787,7 +787,7 @@ Table~\ref{table_coverage} describes the jurisdictions covered by the 1965 VRA a
  %-------------------------------------------
  \begin{figure}[h!]
  	\begin{center}
- 	\caption{Trends in difference between Black and White prison admissions rates by state (with imputations, continued)}
+ 	\caption{Trends in difference between Black and White prison admissions rates by state (continued)}
  	\small
 
  		\vspace{.2in}
@@ -813,7 +813,7 @@ Table~\ref{table_coverage} describes the jurisdictions covered by the 1965 VRA a
  \renewcommand{\thefigure}{E\arabic{figure}}
  \normalsize
 
- Imputation of missing incarceration data at the state level is accomplished through a multi-step process. Following \citesec{Honaker:2010wb}, we first estimate a local polynomial regression for each state to model the relationship between incarceration rates and time. Second, those predicted values are then fed into \emph{Amelia II} \citepsec{Honaker:2011ct} along with state and year fixed effects to model the missing incarceration data. Finally, \emph{Amelia II} generates a set of 5 datasets, each with missing values filled using values drawn from the modeled posterior distribution of missing values. Regressions are then run on each of these five datasets, and the parameters estimated from those regressions are then recombined to account for variation in parameter estimates caused by the estimation uncertainty of missing data imputations.
+ Imputation of missing incarceration data at the state level is accomplished through a multi-step process. Following \citesec{Honaker:2010wb}, we first estimate a local polynomial regression for each state to model the relationship between incarceration rates and time. Second, those predicted values are then fed into \emph{Amelia II} \citepsec{Honaker:2011ct} along with state and year fixed effects to model the missing incarceration data. Finally, \emph{Amelia II} generates a set of 20 datasets for our state-level estimates (10 for counties), each with missing values filled using values drawn from the modeled posterior distribution of missing values. Regressions are then run on each of these five datasets, and the parameters estimated from those regressions are then recombined to account for variation in parameter estimates caused by the estimation uncertainty of missing data imputations.
 
  Tables~\ref{figure_interpolation_0} and~\ref{figure_interpolation_1} show the source of each observation from the balanced panel dataset used for estimation of Table~\ref{table_state}.
 
@@ -1228,7 +1228,7 @@ In the case of the \cite{Violence1969} data, we define class using both income a
 \end{figure} \normalsize
 
 
-We present the results in Figure~\ref{figure_attitudes_class}. Across these regressions, we find only four statistically significant differences by class\footnote{Although as we have not implemented any multiple-test corrections, even these should be interpreted with caution.}: upper class Black respondents appear to be slightly more likely to believe ``Police can be trusted,'' slightly less likely to believe ``Police more likely to be victims of crime than cause crime themselves,'' and for one of our two measures of class, slightly more likely to believe ``Courts are too lenient'' but slightly less likely to believe ``Police should have more power.''
+We present the results in Figure~\ref{figure_attitudes2}. Across these regressions, we find only four statistically significant differences by class\footnote{Although as we have not implemented any multiple-test corrections, even these should be interpreted with caution.}: upper class Black respondents appear to be slightly more likely to believe ``Police can be trusted,'' slightly less likely to believe ``Police more likely to be victims of crime than cause crime themselves,'' and for one of our two measures of class, slightly more likely to believe ``Courts are too lenient'' but slightly less likely to believe ``Police should have more power.''
 
 Nevertheless, the evidence does not paint a consistent picture of upper class Black respondents supporting more punitive policies. Black respondents with more education were much less likely than less educated Black respondents to support retributive punishment (as measured by the retributiveness index), and less likely to say that the police should have more power.  In addition, upper class Black respondents were nearly statistically significantly more likely to think that the police were too powerful (income only), and less likely to think that the police were victims of crime rather than causes of it (income and education).  We note that many point estimates are extremely close to zero and/or have large confidence intervals suggesting that there were not class differences in terms of responses to those questions, or that there is too much noise to be able to reject the null hypothesis of no class differences.
 
@@ -1239,7 +1239,7 @@ Nevertheless, the evidence does not paint a consistent picture of upper class Bl
  \begin{center}
  \caption{Difference between upper and lower class attitudes towards the carceral state amongst Black respondents only, 1969}
  \small
-		 \includegraphics[ width=5.9in, clip=true, trim=0.35in 0in 0.0in 0in ]{../../50_results/Attitudes_3.pdf}
+		 \includegraphics[ width=5.9in, clip=true, trim=0.35in 0in 0.0in 0in ]{../../50_results/Attitudes_violence1969_3.pdf}
  \label{figure_attitudes2}
  	\end{center}
  	{\scriptsize{\emph{Source:} \cite{Violence1969}. }} \\
@@ -1479,10 +1479,10 @@ We also consider data from \citesec{ANES:2020ut}.  This data lacks the detail of
    		\small \vspace*{.05in}
    		\smallskip
 			(a) Averages by race \\
-   			\includegraphics[width=4.2in,  clip=true,  trim= 0.0in 0.0in 0.0in 0.0in]{../../50_results/Attitudes_violence1969_2.pdf} \\
+   			\includegraphics[width=4.2in,  clip=true,  trim= 0.0in 0.0in 0.0in 0.0in]{../../50_results/Attitudes_anes2.pdf} \\
 				\smallskip \smallskip
 				(b) Differences in means between Black and White respondents \\
-   			\includegraphics[width=4.2in,  clip=true,  trim= 0.0in 0.0in 0.0in 0.0in]{../../50_results/Attitudes_violence1969_3.pdf}\\
+   			\includegraphics[width=4.2in,  clip=true,  trim= 0.0in 0.0in 0.0in 0.0in]{../../50_results/Attitudes_anes3.pdf}\\
    		\label{figure_anes}
    		\end{center}
   	\scriptsize{\emph{Notes:} The above plots the average responses by race (top) and simple difference in means between those races (bottom) for the police feeling thermometer question from the ANES.}
@@ -1495,7 +1495,7 @@ We analyze differences in the response to this question by year between Black an
 
 The feeling thermometers are consistently warm for both races.  Both Black and White respondents report averages above 65 for all years.  However, Black responses are on average always lower than White responses.  In addition, Black responses decline faster than White responses through the early 1970s, before finally recovering somewhat.
 
-From our perspective, the most important years are the earliest years---1966 and 1968---the years that are most likely to reflect pre-VRA attitudes towards one important carceral institution (the police).  While noting that we lack the ideal pre-1965 data, we still don't find compelling evidence that Black voters may have had an affirmative policy preference for more incarceration in their communities.
+From our perspective, the most important years are the earliest years---1966 and 1968---the years that are most likely to reflect pre-VRA attitudes towards one important carceral institution (the police).  While noting that we lack the ideal pre-196imputation data, we still don't find compelling evidence that Black voters may have had an affirmative policy preference for more incarceration in their communities.
 
 
 
@@ -1639,20 +1639,13 @@ As expected, there is no evidence of a ``Section 5'' effect prior to 1965. Consi
 \renewcommand{\thefigure}{N\arabic{figure}}
 \normalsize
 
-Table~\ref{table_mip} below presents the minimum number of observations that must be removed from the dataset to change different properties of the long-difference difference-in-difference coefficient (N=504). As the table shows, selectively removing a small number of the most influential observations can push the estimate to being below statistical significance, but the table shows one would need to remove at least 130 (of 504) observations in order to flip the sign of the coefficient of interest, and no amount of data removal could generate a negative statistically significant coefficient.
+Table~\ref{table_mip} below presents the minimum number of observations that must be removed from the dataset to change different properties of the long-difference difference-in-difference coefficient (N=504). As the table shows, selectively removing a small number of the most influential observations can push the estimate to being below statistical significance, but the table shows one would need to remove at least 97 (of 504) observations in order to flip the sign of the coefficient of interest, and no amount of data removal could generate a negative statistically significant coefficient.
 
 Note that due to limitations of the \cite{broderick2021} software, these estimates are based on a single draw from our multiple imputation datasets, and thus do not quite accurately account for interpolation uncertainty (though because the dataset is not best-guess interpolations, but rather one of the multiple imputation draws, interpolation uncertainty is being accounted for partially).
 
 % TABLE: Maximally Influential Perturbations
 %---------------------------------------------------
 \input{../../50_results/maximally_influential_Perturbations_longdiff.tex}
-
-
-
-
-
-
-
 
 
 

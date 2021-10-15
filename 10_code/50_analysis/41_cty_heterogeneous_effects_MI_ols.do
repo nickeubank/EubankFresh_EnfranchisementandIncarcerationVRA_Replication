@@ -60,8 +60,8 @@ foreach drops in threestates allstates {
                 *
                 ***********
 
-                * First, FGLS weights
-                forvalues i = 1/5 {
+                * First
+                forvalues i = 1/10 {
 
 
                     use ctyMI`i', clear

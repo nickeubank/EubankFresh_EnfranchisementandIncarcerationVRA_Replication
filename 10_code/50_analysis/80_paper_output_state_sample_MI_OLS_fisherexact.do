@@ -120,7 +120,7 @@ forvalues x= 1/2 {
     *
     ***********************
 
-    forvalues i = 1/5 {
+    forvalues i = 1/20 {
         use njc_MI`i', clear
 
         * Apply new randomizations
@@ -153,7 +153,7 @@ forvalues x= 1/2 {
     *
     ***********************
 
-    forvalues i = 1/5 {
+    forvalues i = 1/20 {
         use njc_MI`i', clear
 
         * Apply new randomizations
@@ -184,7 +184,7 @@ forvalues x= 1/2 {
     *
     ***********************
 
-    forvalues i = 1/5 {
+    forvalues i = 1/20 {
         use njc_MI`i', clear
 
         * Apply new randomizations

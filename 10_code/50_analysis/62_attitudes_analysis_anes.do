@@ -201,7 +201,7 @@ twoway
 
 
 	cd "${NewJimCrow}"
-	graph export "50_results/Attitudes_2.pdf", replace
+	graph export "50_results/Attitudes_anes2.pdf", replace
 
 
 
@@ -347,7 +347,7 @@ gen cilo = beta - 1.96*se
 *-------
 
 	cd "${NewJimCrow}"
-	graph export "50_results/Attitudes_3.pdf", replace
+	graph export "50_results/Attitudes_anes3.pdf", replace
 
 
 

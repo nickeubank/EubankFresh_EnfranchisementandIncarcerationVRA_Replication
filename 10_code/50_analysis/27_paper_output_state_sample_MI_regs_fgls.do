@@ -126,7 +126,7 @@ forvalues x = 1/2 {
     *
     ***********************
 
-    forvalues i = 1/5 {
+    forvalues i = 1/20 {
         use njc_MI`i', clear
         reg  ${dv`x'} ${linear} ${controls} state_* ///
                             , cluster($cluster)
@@ -193,7 +193,7 @@ forvalues x = 1/2 {
     local model_num = `model_num' + 1
 
 
-    forvalues i = 1/5 {
+    forvalues i = 1/20 {
         use njc_MI`i', clear
         reg  ${dv`x'} ${nonpar}  year_* state_* ///
                             , cluster($cluster)
@@ -251,7 +251,7 @@ forvalues x = 1/2 {
 	// gen ${dv`x'}_dm = ${dv`x'} - ${dv`x'}_m
 
 
-    forvalues i = 1/5 {
+    forvalues i = 1/20 {
         use njc_MI`i', clear
         reg  ${dv`x'} ${nonpar} ${controls} state_* year_* ///
                         if year <= 1965 | year >= 1975, cluster($cluster)

@@ -9,7 +9,7 @@ for (panel in c("main", "hascounty")) {
         "11_state_analysis_data_", panel, "_for_MI.dta"
     ))
     df <- as.data.frame(df)
-    datasets <- 5
+    datasets <- 20
 
     # The answer to the ultimate question of life,
     # the universe, and everything.

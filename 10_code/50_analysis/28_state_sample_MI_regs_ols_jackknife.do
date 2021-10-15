@@ -115,7 +115,7 @@ forvalues x = 1/2 {
 
     foreach state of local states {
 
-        forvalues i = 1/5 {
+        forvalues i = 1/20 {
             use njc_MI`i', clear
             drop if state == "`state'"
             save njcMIw`i', replace

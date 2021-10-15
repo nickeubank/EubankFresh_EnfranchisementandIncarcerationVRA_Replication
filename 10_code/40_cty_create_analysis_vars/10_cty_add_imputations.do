@@ -122,11 +122,12 @@ duplicates report state_county_fips year
 assert r(N) == r(unique_value)
 
 
+
 levelsof state_county_fips, local(county_list)
 
 foreach race in "black" "white" {
 
-    gen cty_hc_rate_lpoly4MI_`race'`x' = .
+    gen cty_hc_rate_lpoly4MI_`race' = .
 
     foreach c of local county_list {
             display "`c'"
@@ -147,8 +148,10 @@ foreach race in "black" "white" {
 
     }
 
-    label var cty_hc_rate_lpoly4MI_`race'`x' "FOR MI: lpoly of admissions rate for `x'"
+    label var cty_hc_rate_lpoly4MI_`race' "FOR MI: lpoly of admissions rate for `x'"
 }
+
+
 ****************
 * Now drop the EXTRApolations as opposed to INTERPolations
 ****************

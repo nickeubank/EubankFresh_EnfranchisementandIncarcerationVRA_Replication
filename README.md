@@ -23,7 +23,7 @@ Replication can be re-re-run (not a typo) by deleting everything in 50_results, 
 
 ## A Note On Random Seeds
 
-We have set random seeds for the multiple imputations. HOWEVER: I have, in all my years doing replications, never been able to get random seeds in R to be really stable across operating systems, installations, etc. So... odds are you'll get results that differ slightly from those in our paper. Sorry. Suggestions on creating more stable random seeds in R welcome!
+We have set random seeds for the multiple imputations (which is stochastic). HOWEVER: I have, in all my years doing replications, never been able to get random seeds in R to be really stable across operating systems, installations, etc. So... odds are you'll get results that differ slightly from those in our paper. Sorry. Suggestions on creating more stable random seeds in R welcome!
 
 ## File Names
 

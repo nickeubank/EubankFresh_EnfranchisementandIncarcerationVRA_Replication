@@ -139,7 +139,7 @@ forvalues x = 1/2 {
 	* plain vanilla part 1
 	*---------------------
 
-    forvalues i = 1/5 {
+    forvalues i = 1/10 {
 
 		cd $NewJimCrow/20_intermediate_data/40_analysis_datasets/30_cty_analysis_data_with_MI
         use ctyMI`i', clear
@@ -168,7 +168,7 @@ forvalues x = 1/2 {
             ${writef} "`cleaned_mean'"
             ${closef}
         }
-
+		cd $NewJimCrow/20_intermediate_data/40_analysis_datasets/30_cty_analysis_data_with_MI
         save ctyMIw`i', replace
 
     }
@@ -217,7 +217,7 @@ forvalues x = 1/2 {
 	* plain vanilla part 2
 	*---------------------
 
-    forvalues i = 1/5 {
+    forvalues i = 1/10 {
 
 		cd $NewJimCrow/20_intermediate_data/40_analysis_datasets/30_cty_analysis_data_with_MI
         use ctyMI`i', clear
@@ -238,7 +238,7 @@ forvalues x = 1/2 {
 			capture label var vra2_x_post1965			"Post-1965 $\times$ Covered"
 
 
-
+		cd $NewJimCrow/20_intermediate_data/40_analysis_datasets/30_cty_analysis_data_with_MI
         save ctyMIw`i', replace
 
     }

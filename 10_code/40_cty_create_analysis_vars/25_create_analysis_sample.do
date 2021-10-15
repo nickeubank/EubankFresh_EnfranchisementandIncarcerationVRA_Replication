@@ -105,11 +105,6 @@ drop if first_census_pop_black_perc == . & vreg_share_black == .
 
 capture drop first_year last_year
 
-* Drop if don't have incarceration data and didn't get it filled from
-* lpoly.
-drop if cty_hc_lpoly_rate_black == .
-
-
 * Now drop if don't have observations on both sides of 65.
 
 gen temp = year if cty_hc_lpoly_rate_black !=.
@@ -120,10 +115,12 @@ assert last_year != .
 tab last_year
 drop if (first_year > 1965) | (last_year <= 1965)
 
+* Don't want extrapolations by MI, just interpolations
+drop if year < first_year 
+drop if year > last_year
 
 * Symmetry with other panel
 keep if year >= 1946 & year <= 1982
-
 
 
 
