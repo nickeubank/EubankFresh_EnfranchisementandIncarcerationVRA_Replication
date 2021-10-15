@@ -507,7 +507,6 @@ Our findings also speak to current debates about mass incarceration in several w
 
 
 \clearpage
-\pagenumbering{roman}
 
 \begin{center}
 \singlespacing
@@ -520,7 +519,7 @@ Our findings also speak to current debates about mass incarceration in several w
 
 	\large
 	\vspace{.25in}
-	Date: October 26, 2020
+	Date: October 8th, 20221
 
 \end{center}
 
@@ -534,8 +533,7 @@ Our findings also speak to current debates about mass incarceration in several w
 
 \renewcommand{\thesubsection}{\Alph{subsection}}
 
-
-\vspace{.2in}
+\singlespacing
 \noindent \textbf{Appendix Contents} \\
 
 
@@ -562,7 +560,6 @@ Our findings also speak to current debates about mass incarceration in several w
 
 
 %----------------------------- APPENDIX A: Sources ---------------------------------%
-\clearpage \newpage
 \section{Brief History of Race, the Franchise and the Carceral State}\label{appendix_history}
 \setcounter{table}{0}
 \setcounter{figure}{0}
@@ -594,7 +591,6 @@ The temporal link between Black enfranchisement and incarceration trends has not
 
 
 %----------------------------- APPENDIX C: Coverage ---------------------------------%
-\clearpage \newpage
 \section{Section 5 Coverage}\label{appendix_coverage}
 \setcounter{table}{0}
 \setcounter{figure}{0}
@@ -645,7 +641,6 @@ Table~\ref{table_coverage} describes the jurisdictions covered by the 1965 VRA a
 
 
 %--------------------- APPENDIX D: Black Rate State Plots -------------------------%
-\clearpage \newpage
 \section{Trends in Black Admission Rates by State}\label{appendix_Black_rates_states}
 \setcounter{table}{0}
 \setcounter{figure}{0}
@@ -725,7 +720,6 @@ Table~\ref{table_coverage} describes the jurisdictions covered by the 1965 VRA a
 
 
 % %--------------------------- APPENDIX E: Difference B-W --------------------------------%
- \clearpage \newpage
  \section{Trends in Difference in Black-White Admission Rates by States}\label{appendix_diff_rates_states}
  \setcounter{table}{0}
  \setcounter{figure}{0}
@@ -805,7 +799,6 @@ Table~\ref{table_coverage} describes the jurisdictions covered by the 1965 VRA a
 
 
  %----------------- APPENDIX F: INTERPOLATIONS ------------------------------------%
- \clearpage \newpage
  \section{Incarceration Imputations}\label{appendix_imputations}
  \setcounter{table}{0}
  \setcounter{figure}{0}
@@ -827,7 +820,6 @@ Table~\ref{table_coverage} describes the jurisdictions covered by the 1965 VRA a
 
 
 %--------------------------- APPENDIX F: Jackknife ----------------------------%
-\clearpage \newpage
 \section{State Results Dropping One State at a Time}\label{appendix_jackknife}
 \setcounter{table}{0}
 \setcounter{figure}{0}
@@ -882,7 +874,6 @@ In both cases, we find our point estimates are substantively quite stable, and w
 
 
 %------------------------ APPENDIX J: County something ------------------------%
-\clearpage \newpage
 \section{County Analyses}\label{appendix_county}
 \setcounter{table}{0}
 \setcounter{figure}{0}
@@ -890,47 +881,55 @@ In both cases, we find our point estimates are substantively quite stable, and w
 \renewcommand{\thefigure}{G\arabic{figure}}
 \normalsize
 
-As discussed in Section~\ref{section_blackpoliticalempowerment}, our analysis of county-level heterogeneity is limited by data availability. We were able to collect county-by-year-by-race data on state prison admissions for only six of the 18 states we study, and of these six, only the sample of Alabama, Georgia, and Tennessee exhibits similar overall dynamics to our full 18 state sample. This is demonstrated in Tables \ref{table_county_representativesample} and \ref{table_county_allstates}.\footnote{We explored all other sample permutations before settling on these three states as our most typical sample.} As our interest is in developing a deeper understanding of ``typical'' cases of the phenomenon we observe in our full sample, we therefore follow \citesec{Seawright:2008us} and focus on this sample of three states.
+As discussed in Section~\ref{section_blackpoliticalempowerment}, our analysis of county-level heterogeneity is limited by data availability. We were able to collect county-by-year-by-race data on state prison admissions for only six of the 18 states we study, and of these six, only the sample of Alabama, Georgia, and Tennessee exhibits similar overall dynamics to our full 18 state sample. This is demonstrated in Tables G1 and G2.\footnote{We explored all other sample permutations before settling on these three states as our most typical sample.} As our interest is in developing a deeper understanding of ``typical'' cases of the phenomenon we observe in our full sample, we therefore follow \citesec{Seawright:2008us} and focus on this sample of three states.
 
-As shown in Tables~\ref{table_countyheterogeneity_allstates_black}~and~\ref{table_countyheterogeneity_allstates_bminusw}, however, while there are differences in the estimate of average effects when we use all six states, we observe similar patterns of heterogeneity with both samples, providing some additional reassurance in our primary results.  The magnitudes of the estimates are the main difference.
+As shown in Tables G3 and G4, however, while there are differences in the estimate of average effects when we use all six states, we observe similar patterns of heterogeneity with both samples, providing some additional reassurance in our primary results.  The magnitudes of the estimates are the main difference.
 
-Finally, Tables~\ref{table_countyheterogeneity_reg_black} and \ref{table_countyheterogeneity_reg_bminusw} presents the results of our analysis of county-level heterogeneity after splitting the sample by Black share of registered voters rather than share of population.
+Finally, Tables G5 and G6 presents the results of our analysis of county-level heterogeneity after splitting the sample by Black share of registered voters rather than share of population.
 
 \vspace*{.1in}
 \textbf{Aggregate Average Effects using County-Level Data}
 
-\begin{table}[h!]\centering \footnotesize
-\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-	\caption{Estimates of Effect of Section 5 using County Data from Alabama, Georgia, and Tennessee}\label{table_county_representativesample}
-	\smallskip
-	\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
-	\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
-			&  \multicolumn{2}{c}{Black Prison }  & \multicolumn{2}{c}{Black Minus White}  \\
-			&  \multicolumn{2}{c}{Admissions per 100,000} & \multicolumn{2}{c}{Admissions per 100,000}  \\
-			\cline{2-3} \cline{4-5}   \noalign{\smallskip}
-				\input{../../50_results/table_cty_main_effect_MI_ols_representativesample.tex} \\
-	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
-\multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
-\end{tabular}
-\end{table}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{../../60_appendix_cty_results/table_g1.png}
+\end{figure}
 
 
-\begin{table}[h!]\centering \footnotesize
-\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-	\caption{Estimates of Effect of Section 5 using County Data, All Available States}\label{table_county_allstates}
-	\smallskip
-	\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
-	\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
-			&  \multicolumn{2}{c}{Black Prison }  & \multicolumn{2}{c}{Black Minus White}  \\
-			&  \multicolumn{2}{c}{Admissions per 100,000} & \multicolumn{2}{c}{Admissions per 100,000}  \\
-			\cline{2-3} \cline{4-5}   \noalign{\smallskip}
-				\input{../../50_results/table_cty_main_effect_MI_ols_allstates.tex} \\
-	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
-\multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
-\end{tabular}
-\end{table}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{../../60_appendix_cty_results/table_g2.png}
+\end{figure}
 
-\pagebreak
+% \begin{table}[h!]\centering \footnotesize
+% \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 	\smallskip
+% 	\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
+% 	\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
+% 			&  \multicolumn{2}{c}{Black Prison }  & \multicolumn{2}{c}{Black Minus White}  \\
+% 			&  \multicolumn{2}{c}{Admissions per 100,000} & \multicolumn{2}{c}{Admissions per 100,000}  \\
+% 			\cline{2-3} \cline{4-5}   \noalign{\smallskip}
+% 				\input{../../50_results/table_cty_main_effect_MI_ols_representativesample.tex} \\
+% 	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
+% \multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+% \end{tabular}
+% \end{table}
+
+
+% \begin{table}[h!]\centering \footnotesize
+% \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 	\caption{Estimates of Effect of Section 5 using County Data, All Available States}\label{table_county_allstates}
+% 	\smallskip
+% 	\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
+% 	\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
+% 			&  \multicolumn{2}{c}{Black Prison }  & \multicolumn{2}{c}{Black Minus White}  \\
+% 			&  \multicolumn{2}{c}{Admissions per 100,000} & \multicolumn{2}{c}{Admissions per 100,000}  \\
+% 			\cline{2-3} \cline{4-5}   \noalign{\smallskip}
+% 				\input{../../50_results/table_cty_main_effect_MI_ols_allstates.tex} \\
+% 	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
+% \multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+% \end{tabular}
+% \end{table}
 
 
 \vspace*{.1in}
@@ -938,98 +937,115 @@ Finally, Tables~\ref{table_countyheterogeneity_reg_black} and \ref{table_countyh
 
 
 
-% TABLE: Heterogeneity black voters Black admissions
-%---------------------------------------------------
-\begin{table}[h!]\centering \footnotesize
-\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-	\caption{Heterogeneity in the effect on the Black prison admission rate by the Black share of population, All Available States}\label{table_countyheterogeneity_allstates_black}
-	\smallskip
-	\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
-			\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
-					&  \multicolumn{4}{c}{Outcome: Black prison admission rate per 100,000} \\
-					\cline{2-5}   \noalign{\smallskip}
-					&  \multicolumn{4}{c}{Each model sample restricted by} \\
-					&  \multicolumn{4}{c}{Black Share of Population Immediately Post-VRA} \\
-					\input{../../50_results/heterogeneous_pop_black_rate_ols_MI_allstates.tex} \\
-	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
-		\multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
-		\multicolumn{5}{p{5.1in}}{\scriptsize  \emph{Notes}: The above models estimate equation~\ref{equation_dind_np} for different levels of Black population share in the immediate post-VRA period. }
-\end{tabular}
-\end{table}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{../../60_appendix_cty_results/table_g3.png}
+\end{figure}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{../../60_appendix_cty_results/table_g4.png}
+\end{figure}
+% % TABLE: Heterogeneity black voters Black admissions
+% %---------------------------------------------------
+% \begin{table}[h!]\centering \footnotesize
+% \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 	\caption{Heterogeneity in the effect on the Black prison admission rate by the Black share of population, All Available States}\label{table_countyheterogeneity_allstates_black}
+% 	\smallskip
+% 	\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
+% 			\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
+% 					&  \multicolumn{4}{c}{Outcome: Black prison admission rate per 100,000} \\
+% 					\cline{2-5}   \noalign{\smallskip}
+% 					&  \multicolumn{4}{c}{Each model sample restricted by} \\
+% 					&  \multicolumn{4}{c}{Black Share of Population Immediately Post-VRA} \\
+% 					\input{../../50_results/heterogeneous_pop_black_rate_ols_MI_allstates.tex} \\
+% 	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
+% 		\multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+% 		\multicolumn{5}{p{5.1in}}{\scriptsize  \emph{Notes}: The above models estimate equation~\ref{equation_dind_np} for different levels of Black population share in the immediate post-VRA period. }
+% \end{tabular}
+% \end{table}
 
 
 
 
 
-% TABLE: Heterogeneity black voters Black admissions
-%---------------------------------------------------
-\begin{table}[h!]\centering \footnotesize
-\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-	\caption{Heterogeneity in the effect on the Black minus White prison admission rate by the Black share of population, All Available States}\label{table_countyheterogeneity_allstates_bminusw}
-	\smallskip
-	\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
-			\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
-					&  \multicolumn{4}{c}{Outcome: Black minus White prison admission rates per 100,000} \\
-					\cline{2-5}   \noalign{\smallskip}
-					&  \multicolumn{4}{c}{Each model sample restricted by} \\
-					&  \multicolumn{4}{c}{Black Share of Population Immediately Post-VRA} \\
-					\input{../../50_results/heterogeneous_pop_bminusw_rate_ols_MI_allstates.tex} \\
-	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
-		\multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
-		\multicolumn{5}{p{5.1in}}{\scriptsize  \emph{Notes}: The above models estimate equation~\ref{equation_dind_np} for different levels of Black voter registration in the immediate post-VRA period. }
-\end{tabular}
-\end{table}
-
-\pagebreak
+% % TABLE: Heterogeneity black voters Black admissions
+% %---------------------------------------------------
+% \begin{table}[h!]\centering \footnotesize
+% \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 	\caption{Heterogeneity in the effect on the Black minus White prison admission rate by the Black share of population, All Available States}\label{table_countyheterogeneity_allstates_bminusw}
+% 	\smallskip
+% 	\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
+% 			\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
+% 					&  \multicolumn{4}{c}{Outcome: Black minus White prison admission rates per 100,000} \\
+% 					\cline{2-5}   \noalign{\smallskip}
+% 					&  \multicolumn{4}{c}{Each model sample restricted by} \\
+% 					&  \multicolumn{4}{c}{Black Share of Population Immediately Post-VRA} \\
+% 					\input{../../50_results/heterogeneous_pop_bminusw_rate_ols_MI_allstates.tex} \\
+% 	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
+% 		\multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+% 		\multicolumn{5}{p{5.1in}}{\scriptsize  \emph{Notes}: The above models estimate equation~\ref{equation_dind_np} for different levels of Black voter registration in the immediate post-VRA period. }
+% \end{tabular}
+% \end{table}
 
 
 \vspace*{.1in}
 \textbf{Heterogeneity by Black Voter Registration}
 
 
-
-% TABLE: Heterogeneity black voters Black admissions
-%---------------------------------------------------
-\begin{table}[h!]\centering \footnotesize
-\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-	\caption{Heterogeneity in the effect on the Black prison admission rate by the Black Voter Registration}\label{table_countyheterogeneity_reg_black}
-	\smallskip
-	\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
-			\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
-					&  \multicolumn{4}{c}{Outcome: Black prison admission rates per 100,000} \\
-					\cline{2-5}   \noalign{\smallskip}
-					&  \multicolumn{4}{c}{Each model sample restricted by} \\
-					&  \multicolumn{4}{c}{Black Share of Registration Immediately Post-VRA} \\
-					\input{../../50_results/heterogeneous_reg_black_rate_ols_MI_allstates.tex} \\
-	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
-		\multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
-		\multicolumn{5}{p{5.1in}}{\scriptsize  \emph{Notes}: The above models estimate equation~\ref{equation_dind_np} for different levels of Black voter registration in the immediate post-VRA period.  }
-\end{tabular}
-\end{table}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{../../60_appendix_cty_results/table_g5.png}
+\end{figure}
 
 
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{../../60_appendix_cty_results/table_g6.png}
+\end{figure}
 
-\begin{table}[hb]\centering \footnotesize
-\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-	\caption{Heterogeneity in the effect on the Black minus White prison admission rate by the Black share of Registration}\label{table_countyheterogeneity_reg_bminusw}
-	\smallskip
-	\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
-			\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
-					&  \multicolumn{4}{c}{Outcome: Black minus White prison admission rates per 100,000} \\
-					\cline{2-5}   \noalign{\smallskip}
-					&  \multicolumn{4}{c}{Each model sample restricted by} \\
-					&  \multicolumn{4}{c}{Black Share of Registration Immediately Post-VRA} \\
-					\input{../../50_results/heterogeneous_reg_bminusw_rate_ols_MI_allstates.tex} \\
-	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
-		\multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
-		\multicolumn{5}{p{5.1in}}{\scriptsize  \emph{Notes}: The above models estimate equation~\ref{equation_dind_np} for different levels of Black voter registration in the immediate post-VRA period. }
-\end{tabular}
-\end{table}
+% % TABLE: Heterogeneity black voters Black admissions
+% %---------------------------------------------------
+% \begin{table}[h!]\centering \footnotesize
+% \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 	\caption{Heterogeneity in the effect on the Black prison admission rate by the Black Voter Registration}\label{table_countyheterogeneity_reg_black}
+% 	\smallskip
+% 	\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
+% 			\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
+% 					&  \multicolumn{4}{c}{Outcome: Black prison admission rates per 100,000} \\
+% 					\cline{2-5}   \noalign{\smallskip}
+% 					&  \multicolumn{4}{c}{Each model sample restricted by} \\
+% 					&  \multicolumn{4}{c}{Black Share of Registration Immediately Post-VRA} \\
+% 					\input{../../50_results/heterogeneous_reg_black_rate_ols_MI_allstates.tex} \\
+% 	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
+% 		\multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+% 		\multicolumn{5}{p{5.1in}}{\scriptsize  \emph{Notes}: The above models estimate equation~\ref{equation_dind_np} for different levels of Black voter registration in the immediate post-VRA period.  }
+% \end{tabular}
+% \end{table}
+
+
+
+% \begin{table}[hb]\centering \footnotesize
+% \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 	\caption{Heterogeneity in the effect on the Black minus White prison admission rate by the Black share of Registration}\label{table_countyheterogeneity_reg_bminusw}
+% 	\smallskip
+% 	\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
+% 			\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
+% 					&  \multicolumn{4}{c}{Outcome: Black minus White prison admission rates per 100,000} \\
+% 					\cline{2-5}   \noalign{\smallskip}
+% 					&  \multicolumn{4}{c}{Each model sample restricted by} \\
+% 					&  \multicolumn{4}{c}{Black Share of Registration Immediately Post-VRA} \\
+% 					\input{../../50_results/heterogeneous_reg_bminusw_rate_ols_MI_allstates.tex} \\
+% 	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
+% 		\multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+% 		\multicolumn{5}{p{5.1in}}{\scriptsize  \emph{Notes}: The above models estimate equation~\ref{equation_dind_np} for different levels of Black voter registration in the immediate post-VRA period. }
+% \end{tabular}
+% \end{table}
 
 
 
 %--------------------------- APPENDIX K: BEO --------------------------------%
-\clearpage \newpage
 \section{Black Elected Officials}\label{appendix_beo}
 \setcounter{table}{0}
 \setcounter{figure}{0}
@@ -1110,24 +1126,30 @@ where our unit ($\alpha$) and year ($\gamma$) fixed effects are as before.  Whet
 Note that our sample size is constrained to three states for which we have county-level incarceration data and which approximate our full state-sample main results.  Thus, our sample size is significantly constrained as the treatment of coverage is a state-level phenomenon for these states.
 
 
- \begin{table}[h!]\centering \footnotesize
- \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
- 	\caption{County results for heterogeneity in the effect of Section 5 by local Black elected officials}\label{table_county_beo}
- 	\smallskip
- 	\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
- 	\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
- 			&  \multicolumn{2}{c}{Black Prison }  & \multicolumn{2}{c}{Black Minus White}    \\
-			&  \multicolumn{2}{c}{Admissions per 100,000 }  & \multicolumn{2}{c}{Admissions per 100,000}    \\
- 			\cline{2-3} \cline{4-5}   \noalign{\smallskip}
- 				\input{../../50_results/table_cty_threefold_beo_MI_ols.tex} \\
- 	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
-	\multicolumn{5}{p{6.1in}}{\scriptsize Table shows heterogeneity in the estimates of the relationship between Section 5 coverage and prison admissions by the election of Black officials to political office at the local level.  The unit of observation is a county-year.  The three states that comprise the analysis sample are Alabama, Georgia and Tennessee.  Both outcomes are normalized admissions per 100,000.  Models 1 and 3 are two-way fixed effects models.  Models 2 and 4 are our long difference specification.  Models are estimated using OLS and errors are corrected both for imputations and county clustering.  All models include a control for the share of the population living in urban areas. We exclude counties with less than 5\% of their population Black.  } \\
-  \multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***}
-  \(p<0.01\)}\\
- \end{tabular}
- \end{table}
+%  \begin{table}[h!]\centering \footnotesize
+%  \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%  	\caption{County results for heterogeneity in the effect of Section 5 by local Black elected officials}\label{table_county_beo}
+%  	\smallskip
+%  	\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
+%  	\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
+%  			&  \multicolumn{2}{c}{Black Prison }  & \multicolumn{2}{c}{Black Minus White}    \\
+% 			&  \multicolumn{2}{c}{Admissions per 100,000 }  & \multicolumn{2}{c}{Admissions per 100,000}    \\
+%  			\cline{2-3} \cline{4-5}   \noalign{\smallskip}
+%  				\input{../../50_results/table_cty_threefold_beo_MI_ols.tex} \\
+%  	\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
+% 	\multicolumn{5}{p{6.1in}}{\scriptsize Table shows heterogeneity in the estimates of the relationship between Section 5 coverage and prison admissions by the election of Black officials to political office at the local level.  The unit of observation is a county-year.  The three states that comprise the analysis sample are Alabama, Georgia and Tennessee.  Both outcomes are normalized admissions per 100,000.  Models 1 and 3 are two-way fixed effects models.  Models 2 and 4 are our long difference specification.  Models are estimated using OLS and errors are corrected both for imputations and county clustering.  All models include a control for the share of the population living in urban areas. We exclude counties with less than 5\% of their population Black.  } \\
+%   \multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***}
+%   \(p<0.01\)}\\
+%  \end{tabular}
+%  \end{table}
 
-We present the results (using a one year lag) in Table~\ref{table_county_beo}.  Results for other lag structures are similar in magnitude. Columns 1 and 3 present two-way fixed effects models, while columns 2 and 4 present long difference results.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]{../../60_appendix_cty_results/table_h1.png}
+\end{figure}
+
+
+We present the results (using a one year lag) in Table H1.  Results for other lag structures are similar in magnitude. Columns 1 and 3 present two-way fixed effects models, while columns 2 and 4 present long difference results.
 
 The results indicate that the election of Black officials has a negative effect on Black admissions rates and the difference in between Black and White admissions rates (adding the coefficients on the interaction and the separate BEO regressor).\footnote{When we estimate that simple model excluding the interaction term the coefficient on BEO is negative and statistically different from zero in all models. }  Thus, when Black officials are elected, generally, they do not appear to be increasing race-specific incarceration as would have to be the case for our main results to be explained by the \emph{Self Policing} argument.  Instead, overall they are decreasing incarceration.  Given that there were, in effect, almost no Black elected officials in the pre-1965 period, we can interpret the coefficient on BEO as a post-1965 effect of Black elected officials. In addition to the direct effect of Black elected officials, we're also interested in whether that effect differs under covered states.  In We estimate that in covered states, Black elected officials reduced incarceration less than in uncovered states, but our point estimates remain negative (if insignificant).
 
@@ -1140,7 +1162,6 @@ Thus, these results do not appear to us consistent with the \emph{Self Policing}
 
 
 %---------------------- APPENDIX I: Attitudes --------------------------------%
-\clearpage \newpage
 \section{Attitudes to Crime and the Carceral State}\label{appendix_attitudes}
 \setcounter{table}{0}
 \setcounter{figure}{0}
@@ -1453,7 +1474,7 @@ We recode the response options for 0064 above (0=no; 1=yes) and for 0065 (0=igno
    	\caption{The difference in Black-White attitudes towards the police prior to the VRA (Almond and Verba data)}
    		\small \vspace*{.05in}
    		\smallskip
-   			\includegraphics[width=5.0in,  clip=true,  trim= 0.0in 0.0in 0.0in 0.0in]{../../50_results/Attitudes_4_AV.pdf} \\
+   			\includegraphics[width=2.0in,  clip=true,  trim= 0.0in 0.0in 0.0in 0.0in]{../../50_results/Attitudes_4_AV.pdf} \\
    		\label{figure_almondverba}
    		\end{center}
   	\scriptsize{\emph{Notes:} The above plot presents a difference in means between Black and White responses to two questions about the police fielded between 1969 and 1970. }
@@ -1480,7 +1501,6 @@ We also consider data from \citesec{ANES:2020ut}.  This data lacks the detail of
    		\smallskip
 			(a) Averages by race \\
    			\includegraphics[width=4.2in,  clip=true,  trim= 0.0in 0.0in 0.0in 0.0in]{../../50_results/Attitudes_anes2.pdf} \\
-				\smallskip \smallskip
 				(b) Differences in means between Black and White respondents \\
    			\includegraphics[width=4.2in,  clip=true,  trim= 0.0in 0.0in 0.0in 0.0in]{../../50_results/Attitudes_anes3.pdf}\\
    		\label{figure_anes}
@@ -1504,7 +1524,6 @@ From our perspective, the most important years are the earliest years---1966 and
 
 
 % %--------------------------- APPENDIX J: Fisher --------------------------------%
-\clearpage \newpage
 \section{Fisher Randomization Tests}\label{appendix_fisher}
 \setcounter{table}{0}
 \setcounter{figure}{0}
@@ -1521,22 +1540,18 @@ These are conducted by randomizing state-level assignment to treatment (Section 
 \begin{figure}[bh!]
 	\centering
 	\caption{Black Incarceration Rates}\label{figure_fisher1}
-	\includegraphics[width=0.45\textwidth]{../../50_results/fisher_1_linear_model_\fisherN_ols.pdf}\includegraphics[width=0.45\textwidth]{../../50_results/fisher_1_twoway_FEs_\fisherN_ols.pdf}\\
-	\includegraphics[width=0.45\textwidth]{../../50_results/fisher_1_long_diff_\fisherN_ols.pdf}
+	\includegraphics[width=0.3\textwidth]{../../50_results/fisher_1_linear_model_\fisherN_ols.pdf}\includegraphics[width=0.3\textwidth]{../../50_results/fisher_1_twoway_FEs_\fisherN_ols.pdf}\includegraphics[width=0.3\textwidth]{../../50_results/fisher_1_long_diff_\fisherN_ols.pdf}
 \end{figure}
 
 
 \begin{figure}[bh!]
 	\centering
 	\caption{Black Minus White Incarceration Rates}\label{figure_fisher2}
-	\includegraphics[width=0.45\textwidth]{../../50_results/fisher_2_linear_model_\fisherN_ols.pdf}\includegraphics[width=0.45\textwidth]{../../50_results/fisher_2_twoway_FEs_\fisherN_ols.pdf}\\
-	\includegraphics[width=0.45\textwidth]{../../50_results/fisher_2_long_diff_\fisherN_ols.pdf}
+	\includegraphics[width=0.3\textwidth]{../../50_results/fisher_2_linear_model_\fisherN_ols.pdf}\includegraphics[width=0.3\textwidth]{../../50_results/fisher_2_twoway_FEs_\fisherN_ols.pdf}\includegraphics[width=0.3\textwidth]{../../50_results/fisher_2_long_diff_\fisherN_ols.pdf}
 \end{figure}
 
 
-
 % %--------------------------- APPENDIX J: FGLS --------------------------------%
-\clearpage \newpage
 \section{Feasible Generalized Least Squares Results}\label{appendix_fgls}
 \setcounter{table}{0}
 \setcounter{figure}{0}
@@ -1566,7 +1581,6 @@ In Table~\ref{table_state_fgls} below, we present results estimated using Feasib
 
 
 % %--------------------------- APPENDIX L: FGLS --------------------------------%
-\clearpage \newpage
 \section{Event Study}\label{appendix_eventstudy}
 \setcounter{table}{0}
 \setcounter{figure}{0}
@@ -1600,7 +1614,6 @@ As expected, there is no evidence of a ``Section 5'' effect prior to 1965. Consi
 
 
 % %--------------------------- APPENDIX N: County Heterogeneity, Black Minus White --------------------------------%
-\clearpage \newpage
 \section{County Heterogeneity: Black minus White}\label{appendix_countyheterogeneity_blackminuswhite}
 \setcounter{table}{0}
 \setcounter{figure}{0}
@@ -1612,26 +1625,28 @@ As expected, there is no evidence of a ``Section 5'' effect prior to 1965. Consi
 
 % TABLE: Heterogeneity black voters Black admissions
 %---------------------------------------------------
-\begin{table}[h!]\centering \footnotesize
-	\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-		\caption{Heterogeneity in the effect on the Black minus White prison admission rate by the Black share of population}\label{table_heterogeneous2}
-		\smallskip
-		\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
-			\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
-						&  \multicolumn{4}{c}{Outcome: Black minus White prison admission rates per 100,000} \\
-					\cline{2-5}   \noalign{\smallskip}
-						&  \multicolumn{4}{c}{Each model sample restricted by} \\
-						&  \multicolumn{4}{c}{Black Share of Population Immediately Post-VRA} \\
-					\input{../../50_results/heterogeneous_pop_bminusw_rate_ols_MI_threestates.tex} \\
-		\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
-		\multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
-		\multicolumn{5}{p{5.1in}}{\scriptsize  \emph{Notes}: The above models estimate the long difference version of equation~\ref{equation_dind_np} for different levels of Black population in the immediate post-VRA period, dropping the years 1965-1974.  In Appendix~\ref{appendix_county}, we observe similar non-monotonicities using the Black share of registered voters. The cut points are chosen based on the distribution county Black population, with the constraint of one group above 50\%.  We note that only two non-covered counties enter into our sample in model 4.  We include a control for share of the county that is urban.  We exclude counties with less than 5\% of the population Black.}
-	\end{tabular}
-	\end{table}
-
+% \begin{table}[h!]\centering \footnotesize
+% 	\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 		\caption{Heterogeneity in the effect on the Black minus White prison admission rate by the Black share of population}\label{table_heterogeneous2}
+% 		\smallskip
+% 		\begin{tabular}{@{\extracolsep{5pt}}l*{5}{c}}
+% 			\noalign{\smallskip}\hline\hline\noalign{\smallskip}\noalign{\smallskip}
+% 						&  \multicolumn{4}{c}{Outcome: Black minus White prison admission rates per 100,000} \\
+% 					\cline{2-5}   \noalign{\smallskip}
+% 						&  \multicolumn{4}{c}{Each model sample restricted by} \\
+% 						&  \multicolumn{4}{c}{Black Share of Population Immediately Post-VRA} \\
+% 					\input{../../50_results/heterogeneous_pop_bminusw_rate_ols_MI_threestates.tex} \\
+% 		\noalign{\vspace*{-.17in}}\hline\hline\noalign{\smallskip}
+% 		\multicolumn{5}{l}{\scriptsize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+% 		\multicolumn{5}{p{5.1in}}{\scriptsize  \emph{Notes}: The above models estimate the long difference version of equation~\ref{equation_dind_np} for different levels of Black population in the immediate post-VRA period, dropping the years 1965-1974.  In Appendix~\ref{appendix_county}, we observe similar non-monotonicities using the Black share of registered voters. The cut points are chosen based on the distribution county Black population, with the constraint of one group above 50\%.  We note that only two non-covered counties enter into our sample in model 4.  We include a control for share of the county that is urban.  We exclude counties with less than 5\% of the population Black.}
+% 	\end{tabular}
+% 	\end{table}
+\begin{figure}[bh!]
+	\centering
+	\includegraphics[width=\textwidth]{../../60_appendix_cty_results/table_m1.png}
+\end{figure}
 
 %---------------------- APPENDIX M: Perturbations --------------------------------%
-\clearpage \newpage
 \section{Robustness to Maximally Influence Perturbations}\label{appendix_broderick}
 \setcounter{table}{0}
 \setcounter{figure}{0}
@@ -1649,13 +1664,11 @@ Note that due to limitations of the \cite{broderick2021} software, these estimat
 
 
 
-
+\pagebreak \clearpage
 
 
 %---------------------- SECTION: SECOND BIBLIOGRAPHY -----------------------------%
 
-\clearpage
-\newpage
 \singlespacing
 \bibliographystylesec{apsr.bst}
 \bibliographysec{EubankFresh_Incarceration_bibliography.bib}
